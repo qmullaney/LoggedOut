@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             
-            login(@user)
+            log_in!(@user)
 
             render "api/users/show"
         else

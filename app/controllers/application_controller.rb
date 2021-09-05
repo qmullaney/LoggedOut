@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     end
 
 
-    # not sure if i need this, proobably not 
+    # not sure if i need this, probably not 
     def ensure_logged_in
         redirect_to new_session_url if !logged_in?
     end
