@@ -6,7 +6,6 @@ class LoginForm extends React.Component {
 
         this.state = {
             email: '',
-            name: '',
             password: ''
         };
 
@@ -31,9 +30,6 @@ class LoginForm extends React.Component {
                     <h1>Welcome to your professional community</h1>
                     <label>Email
                         <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                    </label>
-                    <label>Name
-                        <input type="text" value={this.state.name} onChange={this.update('name')}/>
                     </label>
                     <label>Password
                         <input type="password" value={this.state.password} onChange={this.update('password')}/>
