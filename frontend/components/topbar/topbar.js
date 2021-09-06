@@ -14,8 +14,8 @@ class Topbar extends React.Component {
 
     render(){
         const signedOut = <nav>
-            <Link to="/">Linkedin</Link>
-            <Link to="/signup">Join now</Link>
+            <Link onClick={this.props.clearErrors} to="/">Linkedin</Link>
+            <Link onClick={this.props.clearErrors} to="/signup">Join now</Link>
             <Link to="/">Sign in</Link>
         </nav>;
 

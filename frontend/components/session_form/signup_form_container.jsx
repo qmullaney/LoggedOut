@@ -5,7 +5,7 @@ import { signup } from '../../actions/session_action'
 
 
 const mSTP = state => ({
-
+    errors: state.errors.newUserError 
 })
 
 const mDTP = dispatch => ({

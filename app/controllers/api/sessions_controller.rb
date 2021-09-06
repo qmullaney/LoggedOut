@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email],params[:user][:password])
 
         if @user.nil?
-            render json: ['Invalid credentials'],status: 401
+            render json: ['Couldn’t find a LinkedIn account associated with this email and password. Please try again.'], status: 401
         else
             log_in!(@user)
             render "/api/users/show"

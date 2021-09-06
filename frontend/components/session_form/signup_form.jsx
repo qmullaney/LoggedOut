@@ -25,10 +25,20 @@ class SigninForm extends React.Component {
     }
 
     render() {
+        let currentErrors = [];
+        for(let i = 0; i < this.props.errors.length; i++){
+            <li>
+                {currentErrors.push(this.props.errors[i])}
+            </li>
+        }
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Make the most of your professional life</h1>
+                    <ul>
+                        {currentErrors}
+                    </ul>
                     <label>Email
                         <input type="text" value={this.state.email} onChange={this.update('email')}/>
                     </label>

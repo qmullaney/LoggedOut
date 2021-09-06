@@ -4,7 +4,7 @@ import LoginForm from "./login_form";
 import { login } from '../../actions/session_action'
 
 const mSTP = state => ({
-
+    errors: state.errors.sessionErrors
 })
 
 const mDTP = dispatch => {
