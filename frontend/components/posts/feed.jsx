@@ -1,4 +1,5 @@
 import React from 'react';
+import CreatePost from './create_post';
 
 class Feed extends React.Component {
     constructor(props){
@@ -9,6 +10,7 @@ class Feed extends React.Component {
         return (
             <div>
                 <h1>Your Feed</h1>
+                <CreatePost />
             </div>
         )
     }

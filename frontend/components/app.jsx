@@ -12,10 +12,12 @@ import loginFormContainer from './session_form/login_form_container';
 import signupFormContainer from './session_form/signup_form_container';
 import feedContainer from './posts/feed_container'
 import topbarContainer from './topbar/topbar_container'
+import Modal from './modal/modal-container';
 
 
 const App = () => (
     <div>
+        <Modal/>
         <header>
             <Route path="/" component={topbarContainer}/>
         </header>
