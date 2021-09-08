@@ -20,7 +20,7 @@ class Topbar extends React.Component {
         
             <Link className="join-now" onClick={this.props.clearErrors} to="/signup">Join now</Link>
         
-            <Link className= "sign-in" onClick={this.props.clearErrors} to="/">Sign in</Link>
+            <Link className= "sign-in" onClick={this.props.clearErrors} to="/signin">Sign in</Link>
         
             </div>
             

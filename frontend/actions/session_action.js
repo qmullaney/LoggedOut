@@ -40,3 +40,13 @@ export const signup = user => dispatch => (
 export const clearErrors = () => dispatch => {
     return dispatch(clear_errors())
 }
+
+
+export const loginDemoUser = () => dispatch => {
+    const demoUser = {
+        email: "demousernius@gmail.com",
+        password: "123456"
+    }
+    return APIUtil.login(demoUser).then(user => dispatch(receive_current_user(user)), 
+                                    err => (dispatch(receive_errors(err.responseJSON))))
+}

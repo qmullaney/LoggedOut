@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import LoginForm from "./login_form";
+import SigninAltForm from "./signin_alt";
 import { login, loginDemoUser } from '../../actions/session_action'
 
 const mSTP = state => ({
@@ -14,4 +14,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(LoginForm);
+export default connect(mSTP, mDTP)(SigninAltForm);

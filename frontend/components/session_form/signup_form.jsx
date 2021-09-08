@@ -11,14 +11,19 @@ class SigninForm extends React.Component {
             password: '',
             emailPage: true,
             firstName: '',
-            lastName: ''
+            lastName: '',
+            passwordError: '',
+            emailError: '',
+            nameError: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleMoveOn = this.handleMoveOn.bind(this);
+        this.updateErrors = this.updateErrors.bind(this);
     }
 
     update(input){
+        // this.updateErrors();
         return e => this.setState({
             [input]: e.target.value
         });
@@ -27,14 +32,33 @@ class SigninForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         let newName = this.state.firstName + " " + this.state.lastName;
-        this.props.signup({name: newName, email: this.state.email, password: this.state.password});
+        this.props.signup({name: newName, email: this.state.email, password: this.state.password}).then(this.setState({emailPage: true}));
     }
 
     handleMoveOn(e){
         e.preventDefault();
-        this.setState({
-            emailPage: false
-        })
+        if (!this.updateErrors()){
+            this.setState({
+                emailPage: false
+            })
+        }
+    }
+
+    updateErrors(){
+        let errorsStatus = false;
+        if (this.state.password.length < 6){
+            this.setState({passwordError: 'Password must be 6 characters or more.'})
+            errorsStatus = true;
+        }else{
+            this.setState({passwordError: ''})
+        }
+        if (!this.state.email.includes('@') || !this.state.email.includes('.')){
+            this.setState({emailError: 'Please enter a valid email address.'})
+            errorsStatus = true;
+        }else{
+            this.setState({emailError: ''})
+        }
+        return errorsStatus;
     }
 
     render() {
@@ -44,6 +68,9 @@ class SigninForm extends React.Component {
                 {currentErrors.push(this.props.errors[i])}
             </li>
         }
+        currentErrors.push(<li id="200">{this.state.passwordError}</li> );
+        currentErrors.push(<li id='2001'>{this.state.emailError}</li> );
+
         
         let first = <div className="signup-main">
                 <i className="image"/>
@@ -61,7 +88,7 @@ class SigninForm extends React.Component {
                     <div className="submits">
                         <input type="submit" value="Agree & Join" />
                         <p>───────────   or   ───────────</p>
-                        <input className="demo-user" type="button" value="Sign in with Demo User"/>
+                        <input className="demo-user" type="button" value="Sign in with Demo User" onClick={this.props.loginDemoUser}/>
                     </div>
                     <p className="switch">Already on LinkedIn? <Link className="sign-in" to="/">Sign in</Link></p>
                 </form>
