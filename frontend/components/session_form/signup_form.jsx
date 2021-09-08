@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SigninForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props){
         super(props);
 
@@ -64,16 +64,16 @@ class SigninForm extends React.Component {
     render() {
         let currentErrors = [];
         for(let i = 0; i < this.props.errors.length; i++){
-            <li>
+            <li key={`${i}`}>
                 {currentErrors.push(this.props.errors[i])}
             </li>
         }
-        currentErrors.push(<li id="200">{this.state.passwordError}</li> );
-        currentErrors.push(<li id='2001'>{this.state.emailError}</li> );
+        currentErrors.push(<li key="200">{this.state.passwordError}</li> );
+        currentErrors.push(<li key='2001'>{this.state.emailError}</li> );
 
         
         let first = <div className="signup-main">
-                <i className="image"/>
+                <Link className="image" to="/"></Link>
                 <h1>Make the most of your professional life</h1>
                 <form onSubmit={this.handleMoveOn} className="signup-session">
                     <ul className="signup-errors">
@@ -123,4 +123,4 @@ class SigninForm extends React.Component {
     }
 }
 
-export default SigninForm;
+export default SignupForm;

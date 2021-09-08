@@ -22,24 +22,24 @@ class SigninAltForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.signup();
+        this.props.login(this.state);
     }
 
 
     render() {
         let currentErrors = [];
         for(let i = 0; i < this.props.errors.length; i++){
-            <li>
+            <li id={`${i}`}>
                 {currentErrors.push(this.props.errors[i])}
             </li>
         }
         
         let first = <div className="signin-alt-main">
-                <i className="image"/>
+                <Link className="image" to="/"></Link>
                 <form onSubmit={this.handleSubmit} className="signin-session">
                     <h1>Sign in</h1>
                     <h3>Make the most of your professional life</h3>
-                    <ul className="signup-errors">
+                    <ul className="signin-errors">
                         {currentErrors}
                     </ul>
                     <label>Email</label>
