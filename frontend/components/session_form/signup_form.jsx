@@ -73,7 +73,7 @@ class SignupForm extends React.Component {
 
         
         let first = <div className="signup-main">
-                <Link className="image" to="/"></Link>
+                <Link className="image" to="/" onClick={this.props.clearErrors}></Link>
                 <h1>Make the most of your professional life</h1>
                 <form onSubmit={this.handleMoveOn} className="signup-session">
                     <ul className="signup-errors">
@@ -90,7 +90,7 @@ class SignupForm extends React.Component {
                         <p>───────────   or   ───────────</p>
                         <input className="demo-user" type="button" value="Sign in with Demo User" onClick={this.props.loginDemoUser}/>
                     </div>
-                    <p className="switch">Already on LinkedIn? <Link className="sign-in" to="/">Sign in</Link></p>
+                    <p className="switch">Already on LinkedIn? <Link className="sign-in" to="/" onClick={this.props.clearErrors} >Sign in</Link></p>
                 </form>
             </div>
 

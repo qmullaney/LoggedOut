@@ -35,7 +35,7 @@ class SigninAltForm extends React.Component {
         }
         
         let first = <div className="signin-alt-main">
-                <Link className="image" to="/"></Link>
+                <Link className="image" to="/" onClick={this.props.clearErrors}></Link>
                 <form onSubmit={this.handleSubmit} className="signin-session">
                     <h1>Sign in</h1>
                     <h3>Make the most of your professional life</h3>
@@ -54,7 +54,7 @@ class SigninAltForm extends React.Component {
                         <input className="demo-user" type="button" value="Sign in with Demo User" onClick={this.props.loginDemoUser}/>
                     </div>
                 </form>
-                <p className="switch">New to LinkedIn? <Link className="sign-in" to="/signup">Join now</Link></p>
+                <p className="switch">New to LinkedIn? <Link className="sign-in" to="/signup" onClick={this.props.clearErrors}>Join now</Link></p>
             </div>
 
         return (

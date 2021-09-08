@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SigninAltForm from "./signin_alt";
-import { login, loginDemoUser } from '../../actions/session_action'
+import { login, loginDemoUser, clearErrors } from '../../actions/session_action'
 
 const mSTP = state => ({
     errors: state.errors.sessionErrors
@@ -10,7 +10,8 @@ const mSTP = state => ({
 const mDTP = dispatch => {
     return {
         login: user => dispatch(login(user)),
-        loginDemoUser: () => dispatch(loginDemoUser())
+        loginDemoUser: () => dispatch(loginDemoUser()),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 
