@@ -1,5 +1,6 @@
 import React from 'react';
 import CreatePost from './create_post';
+import PostIndex from './post_index';
 
 class Feed extends React.Component {
     constructor(props){
