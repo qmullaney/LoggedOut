@@ -13,14 +13,21 @@ class Topbar extends React.Component {
     }
 
     render(){
-        const signedOut = <nav>
-            <Link onClick={this.props.clearErrors} to="/">Linkedin</Link>
-            <Link onClick={this.props.clearErrors} to="/signup">Join now</Link>
-            <Link onClick={this.props.clearErrors} to="/">Sign in</Link>
+        const signedOut = <nav className="session-nav">
+            <div>
+
+            <Link className="home-logo" onClick={this.props.clearErrors} to="/"></Link>
+        
+            <Link className="join-now" onClick={this.props.clearErrors} to="/signup">Join now</Link>
+        
+            <Link className= "sign-in" onClick={this.props.clearErrors} to="/">Sign in</Link>
+        
+            </div>
+            
         </nav>;
 
         const signedIn = <nav>
-            <button onClick={this.handleLogout}>Log out</button>
+            <button className="logout" onClick={this.handleLogout}>Logout</button>
         </nav>
 
         return (

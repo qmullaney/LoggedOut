@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PostFormContainer from './post_form_container';
+
 import { openModal } from '../../actions/modal_actions';
 
 function CreatePost({ openModal }) {

@@ -33,19 +33,32 @@ class LoginForm extends React.Component {
         }
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="session-log-in">
                     <h1>Welcome to your professional community</h1>
-                    <ul>
-                        {currentErrors}
+
+                    <ul className="signin-errors">
+                            {currentErrors}
                     </ul>
-                    <label>Email
+                    
+                    <i className="image"/>
+
+                    <div className="signin-inputs">
+                        
+                        <label className="signin-email">Email</label>
                         <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                    </label>
-                    <label>Password
+                        
+                        <label className="signin-password">Password </label>
                         <input type="password" value={this.state.password} onChange={this.update('password')}/>
-                    </label>
-                    <input type="submit" value="Sign In" />
+                    </div>
+                    <div className="submits">
+                        <input type="submit" value="Sign In" />
+                        <p>───────────   or   ───────────</p>
+
+                        <input className="demo-user" type="button" value="Sign in with Demo User"/>
+
+                    </div>
                 </form>
+
             </div>
         )
     }

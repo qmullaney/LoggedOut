@@ -1,0 +1,199 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$logo-width: 200px;
+    $button-width: 90px;
+    $button-height: 45px;
+
+
+.session-nav {
+    
+    width: 100vw;
+    height: 50px;
+   
+   
+
+
+    
+    div {
+        margin: 5px;
+        align-items: center;
+        display: grid;
+        
+        grid-template-columns: 10% 1fr $button-width $button-width $button-width;
+        gap: 10px;
+        line-height: 3em;
+        .sign-in {
+            box-sizing: border-box;
+            height: $button-height;
+            width: $button-width;
+            border-radius: 24px;
+            border: 1px solid rgb(10, 100, 200);
+            grid-column: 4/4; 
+            color:rgb(10, 100, 200);
+            text-decoration: none;
+            text-align: center;
+            
+            font-family: 'Urbanist', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+           
+            &:hover {
+                background: rgb(238, 250, 253);
+                border: 2px solid rgb(10, 100, 200);
+            }
+        }
+    
+        .join-now {
+            grid-column: 3/3;
+            text-decoration: none;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: grey;
+            border-radius: 5px;
+            border: 0px;
+            text-align: center;
+
+            &:hover {
+                background: lightgray;
+            }
+        }
+
+        .home-logo {
+            grid-column: 2/2;
+            
+            background-image: image-url("LI-Logo.png");
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 40px;
+            
+        }
+
+    }
+    
+    
+
+}
+
+.session-log-in {
+
+    width: 100vw;
+    height: 70vh;
+
+    display: grid;  
+    grid-template-columns: 10% 40% 1fr;
+    grid-template-rows: 33% 1fr 25% 30%;
+    gap: 10px;
+
+    h1 {
+        font-size: 50px;
+        grid-column: 2/2;
+        grid-row: 1/1;
+        align-self: end;
+        
+        color: rgb(105, 79, 12);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 80;
+    }
+
+    .signin-errors{
+        color: red;
+        grid-column: 2/2;
+        grid-row: 2/2;
+        align-self:end;
+        font-family: 'Urbanist', sans-serif;
+    }
+
+
+    .signin-inputs{
+        grid-column: 2/2;
+        grid-row: 3/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        
+        
+        label{
+            font-size: 16px;
+        }
+        input{
+            width: 70%;
+            height: 40px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+    }
+
+    .submits{
+        grid-column: 2/2; 
+        grid-row: 4/4;
+       
+        text-decoration: none;
+        text-align: left;
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-around;
+
+        
+        
+        input{
+            width: 70%;
+            height: 3em;
+            box-sizing: border-box;
+            border-radius: 24px;
+            
+            
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            
+            background:rgb(10, 100, 200);
+    
+            &:hover {
+                background: darken(rgb(10, 100, 200), 20%);
+            }
+
+
+        }
+
+        p{
+            color: grey;
+        }
+
+        .demo-user{
+            background: white;
+            color: rgb(119, 119, 119);
+            border: 1px solid rgb(119, 119, 119);
+
+            &:hover{
+                border: 2px solid black;
+                color: black;
+                background: white;
+            }
+        }
+    } 
+
+    .image{
+        position: relative;
+        top: 20px;
+        left: -20px;
+        grid-row: 1/5;
+        grid-column: 3/3;
+        background-image: image-url("corprate-art-guy.png");
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 700px;
+        height: 700px;
+        
+    }
+
+}

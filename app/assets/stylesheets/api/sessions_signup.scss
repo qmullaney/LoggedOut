@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.signup-main{
+    width: 100vw;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(241, 241, 234);
+
+    .image{
+
+        background-image: image-url("LI-Logo.png");
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 150px;
+        margin: 30px;
+    }
+
+    h1{
+        font-size: 30px;
+        font-family: 'Urbanist', sans-serif;
+    }
+
+    .signup-session{
+        width: 24%;
+        // height: 70%;
+
+        background: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 30px;
+
+        font-family: 'Urbanist', sans-serif;
+
+        .signin-errors{
+            color: red;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        label{
+            
+            font-size: 14px;
+            color: rgb(97, 97, 97);
+            align-self: flex-start;
+            margin-bottom: 5px;
+        }
+
+        input{
+            width: 100%;
+            height: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        p {
+            font-size: 11px;
+            color: rgb(97, 97, 97);
+            margin-bottom: 15px;
+        }
+
+        .submits{
+            width: 100%;
+            text-decoration: none;
+            
+            display: flex;
+    
+            flex-direction: column;
+            justify-content:space-evenly;
+            align-items: center;
+            
+            
+            input{
+                width: 100%;
+                height: 2.6em;
+                box-sizing: border-box;
+                border-radius: 24px;
+                
+                
+                font-family: 'Urbanist', sans-serif;
+                font-size: 18px;
+                color: white;
+
+                cursor: pointer;
+                
+                background:rgb(10, 100, 200);
+
+                margin-bottom: 20px;
+        
+                &:hover {
+                    background: darken(rgb(10, 100, 200), 20%);
+                }
+    
+    
+            }
+    
+            p{
+                color: grey;
+                margin-bottom: 10px;
+            }
+    
+            .demo-user{
+                background: white;
+                color: rgb(10, 100, 200);
+                border: 1px solid rgb(10, 100, 200);
+                margin-top: 15px;
+                &:hover{
+                    border: 2px solid rgb(10, 100, 200);
+                    color: rgb(10, 100, 200);
+                    background: rgb(238, 250, 253);
+                }
+            }
+        } 
+        .switch{
+            font-size: 15px;
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            .sign-in{
+                font-weight: bold;
+                color: rgb(10, 100, 200);
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}
