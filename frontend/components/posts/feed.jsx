@@ -8,9 +8,10 @@ class Feed extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>Your Feed</h1>
+            <div className="feed-main">
+                
                 <CreatePost />
+                <PostIndex />
             </div>
         )
     }
