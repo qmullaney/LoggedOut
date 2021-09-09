@@ -1,0 +1,44 @@
+.post{
+    margin: 5px 0px;
+
+
+    .post-user-header {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-bottom: 20px;
+
+        .profile{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: red;
+        }
+        .name-title-recency{
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-left: 5px;
+            h3{
+                font-size: 17px;
+                font-weight: bold;
+                padding-bottom: 3px;
+            }
+
+            h4, h5{
+                font-size: 12px;
+                color: darkgrey;
+            }
+
+            
+
+        }
+    }
+    p{
+        font-size: 14px;
+    }
+}
