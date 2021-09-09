@@ -5,14 +5,14 @@ import { openModal } from '../../actions/modal_actions';
 
 function CreatePost({ openModal }) {
     return (
-        <div className="create-post">
+        <div className="create-post section">
             <div className="profile-button">
-                <img src="/notsure" alt="" />
+                <i className="profile"></i>
                 <input type="button" onClick={openModal} value="Start a post"/>
             </div>
-            <div>
+            <div className="buttons">
                 <div>
-                    <img src="" alt="" />
+                
                     <p>Photo</p>
                 </div>
                 <div>
@@ -21,7 +21,7 @@ function CreatePost({ openModal }) {
                 </div>
                 <div>
                     <img src="" alt="" />
-                    <p>Write and article</p>
+                    <p>Write an article</p>
                 </div>
             </div>
 

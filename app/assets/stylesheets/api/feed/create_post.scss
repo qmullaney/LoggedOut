@@ -1,15 +1,75 @@
-.create-post {
+.section{
+    border-radius: 8px;
+    border: 1px solid lightgrey;
     background: white;
+}
 
+.create-post {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: 20px;
+    
     .profile-button {
         display: flex;
-
-        img{
+        align-items: center;
+        justify-content: space-between;
+        .profile{
             height: 40px;
             width: 40px;
             border-radius: 50%;
             background-image: image-url("LI-Logo.png");
+            background: red;
         }
         
+        input{
+            width: 85%;
+            height: 40px;
+            border-radius: 24px;
+            border: 1px solid rgb(128, 128, 128);
+            background: white;
+            text-align: left;
+            font-size: 14px;
+            color: rgb(128, 128, 128);
+            font-weight: bold;
+
+            &:hover{
+                background: lightgrey;
+            }
+        }
     }
+
+    .buttons{
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+
+            i{
+                height: 40px;
+                width: 40px;
+            }
+            &:hover{
+                background: lightgrey;
+            }
+        }
+    }
+
+
+}
+
+.post-index{
+    background: lightpink;
+    height: 100%;
+    margin-top: 20px;
+
+    
+    
 }

@@ -2,8 +2,13 @@
 
 .feed-main{
     display: grid;
-    grid-template-columns: 40% 1fr 1fr;
+    grid-template-columns: 25% 40% 1fr;
     gap: 20px;
+
+    width: 100vw;
+    height: 90vh;
+
+    background: rgb(226, 226, 218);
 
     font-family: 'Urbanist', sans-serif;
 
@@ -14,6 +19,8 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
+
+    
 
     }
 
