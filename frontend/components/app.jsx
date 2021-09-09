@@ -11,8 +11,8 @@ import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import signupFormContainer from './session_form/signup_form_container';
 import loginFormContainer from './session_form/login_form_container';
 import signinAltContainer from './session_form/signin_alt_container';
-import topbarContainer from './topbar/topbar_container'
-import feedContainer from './posts/feed_container'
+import topbarContainer from './topbar/topbar_container';
+import feedContainer from './posts/feed_container';
 import Modal from './modal/modal-container';
 
 

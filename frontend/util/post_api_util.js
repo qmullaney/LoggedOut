@@ -1,10 +1,9 @@
-// export const fetchPosts = searchInfo => (
-//     $.ajax({
-//         method: 'GET',
-//         url: 'api/posts',
-//         data: { searchInfo }
-//     })
-// )
+export const fetchPosts = () => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/posts'
+    })
+)
 
 export const fetchPost = postId => (
     $.ajax({

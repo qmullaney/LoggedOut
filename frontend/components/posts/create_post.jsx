@@ -5,8 +5,8 @@ import { openModal } from '../../actions/modal_actions';
 
 function CreatePost({ openModal }) {
     return (
-        <div>
-            <div>
+        <div className="create-post">
+            <div className="profile-button">
                 <img src="/notsure" alt="" />
                 <input type="button" onClick={openModal} value="Start a post"/>
             </div>
