@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { AiFillHome, AiFillLinkedin } from "react-icons/ai";
 
 class Topbar extends React.Component {
     constructor(props){
@@ -26,8 +27,18 @@ class Topbar extends React.Component {
             
         </nav>;
 
-        const signedIn = <nav>
-            <button className="logout" onClick={this.handleLogout}>Logout</button>
+        const signedIn = <nav className="nav">
+            <AiFillLinkedin className="ln"/>
+            <div className="nav-buttons" >
+                <NavLink activeClassName="selected" className="home" to="/feed">
+                    <AiFillHome className="home-icon" />
+                    <h4>Home</h4>
+                </NavLink>
+                <NavLink activeClassName="selected" className="profile" to="/signup">
+                    <i className="profile-icon"></i>
+                    <h4>Me</h4>
+                </NavLink>
+            </div>
         </nav>
 
         return (

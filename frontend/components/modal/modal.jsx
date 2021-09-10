@@ -14,7 +14,7 @@ class Modal extends React.Component {
         let component;
         if (!this.props.modal){
             return null;
-        }else{
+        }else if (this.props.modal == "createPost"){
             component = <PostFormContainer />;
         }
 

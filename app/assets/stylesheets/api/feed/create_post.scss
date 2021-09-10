@@ -12,6 +12,8 @@
     justify-content: flex-start;
 
     margin-top: 20px;
+
+    padding-bottom: 10px;
     
     .profile-button {
         display: flex;
@@ -45,20 +47,37 @@
     .buttons{
         height: 40px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
 
         div {
             display: flex;
             justify-content: center;
-            height: 40px;
+            height: 30px;
+            
+            align-items: flex-end;
 
-            i{
-                height: 40px;
-                width: 40px;
-            }
             &:hover{
                 background: lightgrey;
+            }
+            .icon{
+                height: 25px;
+                width: 25px;
+                align-self: flex-end;
+                margin-bottom: -3px;
+            }
+
+            .blue{
+                fill: rgb(85, 182, 214);
+            }
+
+            .pink{
+                fill: rgb(245, 158, 171)
+            }
+
+            p{
+                margin-left: 10px;
+                color: rgb(105, 105, 105);
             }
         }
     }
@@ -73,5 +92,8 @@
     border: none;
 
     padding: 0px;
+
+    
+    
     
 }

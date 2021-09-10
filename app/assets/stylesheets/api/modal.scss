@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
 
+
+
 .modal-background {
     font-family: 'Urbanist', sans-serif;
     position: fixed;
@@ -10,23 +12,29 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 5;
 
+    
     .modal {
         position: relative;
         top: 3%;
         left: 27%;
         width: 35%;
 
+        max-height: 70%;
+
 
         padding: 15px;
         border-radius: 7px;
         background: white;
 
+        overflow: scroll;
 
         form{
             display: flex;
             flex-direction: column;
-            height: 70vh;
-            overflow: scroll;
+            
+            justify-content: flex-start;
+
+            
 
             h1{
                 font-size: 20px;
@@ -89,16 +97,20 @@
                 outline: none;
                 
             }
-
-            .uploaded-image{
+            .imgimg{
                 width: 100%;
+                overflow: flex;
+                .uploaded-image{
+                    width: 100%;
+                }
+
             }
 
             div{
                 display: flex;
                 justify-content: space-between;
 
-                input{
+                .post{
                     width: 100px;
                     height: 2.6em;
                     box-sizing: border-box;
@@ -122,12 +134,25 @@
                     
         
                 }
+
+                label {
+                    align-self: flex-end;
+
+                    svg{
+                        height: 2em;
+                        width: 2em;
+
+                        fill: grey;
+                    }
+                }
+
+                #gabagool{
+                    display: none;
+                }
             }
 
 
-            .file-input {
-                
-            }
+            
 
         }
         

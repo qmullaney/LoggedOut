@@ -3,6 +3,13 @@ import { connect } from 'react-redux';
 
 
 function ShowPost({ post }) {
+    let image;
+    if (post.photo_url){
+        image = <img src={post.photo_url} alt="userimage" />
+    }else {
+        image = null;
+    }
+
     return (
         <div className="post section">
             <div className="post-user-header">
@@ -15,6 +22,7 @@ function ShowPost({ post }) {
                 
             </div>
             <p>{post.body}</p>
+            {image}
         </div>
     )
 }

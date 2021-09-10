@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiFillPicture } from "react-icons/ai";
 
 class PostForm extends React.Component {
     constructor(props){
@@ -23,31 +24,26 @@ class PostForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.setState({author_id: this.props.currentUser.id});
+        
+        // this.setState({author_id: this.props.currentUser.id});
         
         // this.props.submitFormPost(this.state);
 
         const formData = new FormData();
         formData.set('post[body]', this.state.body);
-        formData.set('post[author_id]', this.state.author_id);
+        formData.set('post[author_id]', this.props.currentUser.id);
 
         if (this.state.imageFile) {
             formData.append('post[photo]', this.state.imageFile);
         }
 
-        $.ajax({
-            url: '/api/posts',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        });
+        
+
+        this.props.submitFormPost(formData);
 
 
         if(this.state.body.length !== 0){
             this.props.closeModal();
-        }else{
-            this.props.openModal();
         }
     }
 
@@ -97,12 +93,16 @@ class PostForm extends React.Component {
                 
                 <textarea  placeholder="What do you want to talk about?" value={this.state.body} onChange={this.update("body")}></textarea>
 
-                {img}
+                <div className="imgimg">
+                    {img}
+
+                </div>
                 
                 <div>
-                    
-                    <input className="file-input" type="file" name="file" onChange={this.handleAddImage}/>
-                    <input type="submit" value="Post"/>
+                    <label htmlFor="gabagool" className="file-input"><AiFillPicture/></label>
+                    <input id="gabagool"  type="file" name="file" onChange={this.handleAddImage}/>
+
+                    <input className="post" type="submit" value="Post"/>
                     
                 </div>
                 

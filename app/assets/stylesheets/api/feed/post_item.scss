@@ -1,13 +1,18 @@
 .post{
     margin: 5px 0px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 0px;
 
     .post-user-header {
 
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
+        padding: 10px;
         padding-bottom: 20px;
 
         .profile{
@@ -38,7 +43,13 @@
 
         }
     }
+
     p{
         font-size: 14px;
+        padding: 10px;
+    }
+
+    img{
+        width: 100%;
     }
 }
