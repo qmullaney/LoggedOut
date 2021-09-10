@@ -6,10 +6,13 @@ class PostForm extends React.Component {
 
         this.state = {
             body: '',
-            author_id: ''
+            author_id: '',
+            imageUrl: "",
+            imageFile: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleAddImage = this.handleAddImage.bind(this);
     }
 
     update(field){
@@ -20,9 +23,27 @@ class PostForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        let post = Object.assign({}, this.state, { author_id: this.props.currentUser.id});
+        this.setState({author_id: this.props.currentUser.id});
         
-        this.props.submitFormPost(post);
+        // this.props.submitFormPost(this.state);
+
+        const formData = new FormData();
+        formData.set('post[body]', this.state.body);
+        formData.set('post[author_id]', this.state.author_id);
+
+        if (this.state.imageFile) {
+            formData.append('post[photo]', this.state.imageFile);
+        }
+
+        $.ajax({
+            url: '/api/posts',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        });
+
+
         if(this.state.body.length !== 0){
             this.props.closeModal();
         }else{
@@ -30,7 +51,34 @@ class PostForm extends React.Component {
         }
     }
 
+    handleAddImage(e){
+        
+        const reader = new FileReader();
+
+        const file = e.currentTarget.files[0];
+
+        
+        
+        reader.onloadend = () => this.setState({ imageUrl: reader.result, imageFile: file });
+        
+        if (file) {
+            reader.readAsDataURL(file);
+        }else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
+        
+    }
+
     render(){
+        let img;
+        if (this.state.imageFile){
+            
+            img = <img src={this.state.imageUrl} alt="uploadedpic" className="uploaded-image"/>
+            
+        }else{
+            img = null;
+        }
+
         return (
            
             <form onSubmit={this.handleSubmit}>
@@ -48,8 +96,16 @@ class PostForm extends React.Component {
                 </div>
                 
                 <textarea  placeholder="What do you want to talk about?" value={this.state.body} onChange={this.update("body")}></textarea>
+
+                {img}
                 
-                <input type="submit" value="Post"/>
+                <div>
+                    
+                    <input className="file-input" type="file" name="file" onChange={this.handleAddImage}/>
+                    <input type="submit" value="Post"/>
+                    
+                </div>
+                
             </form>
         )
     }

@@ -20,9 +20,13 @@
         padding: 15px;
         border-radius: 7px;
         background: white;
+
+
         form{
             display: flex;
             flex-direction: column;
+            height: 70vh;
+            overflow: scroll;
 
             h1{
                 font-size: 20px;
@@ -86,29 +90,43 @@
                 
             }
 
-            input{
-                width: 100px;
-                height: 2.6em;
-                box-sizing: border-box;
-                border-radius: 24px;
-                border: none;
-                
-                
-                font-family: 'Urbanist', sans-serif;
-                font-size: 18px;
-                color: white;
+            .uploaded-image{
+                width: 100%;
+            }
 
-                cursor: pointer;
-                
-                background:rgb(10, 100, 200);
+            div{
+                display: flex;
+                justify-content: space-between;
 
-                
-        
-                &:hover {
-                    background: darken(rgb(10, 100, 200), 20%);
-                }
-                align-self: flex-end;
+                input{
+                    width: 100px;
+                    height: 2.6em;
+                    box-sizing: border-box;
+                    border-radius: 24px;
+                    border: none;
+                    
+                    
+                    font-family: 'Urbanist', sans-serif;
+                    font-size: 18px;
+                    color: white;
     
+                    cursor: pointer;
+                    
+                    background:rgb(10, 100, 200);
+    
+                    
+            
+                    &:hover {
+                        background: darken(rgb(10, 100, 200), 20%);
+                    }
+                    
+        
+                }
+            }
+
+
+            .file-input {
+                
             }
 
         }
