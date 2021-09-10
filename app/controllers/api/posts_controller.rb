@@ -11,6 +11,7 @@ class Api::PostsController < ApplicationController
         
         @post = Post.new(post_params)
 
+        
 
         if @post.save
             render "api/posts/show"

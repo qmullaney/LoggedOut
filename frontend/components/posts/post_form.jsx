@@ -21,22 +21,36 @@ class PostForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         let post = Object.assign({}, this.state, { author_id: this.props.currentUser.id});
-        this.props.submitFormPost(post).then(this.props.closeModel);
+        
+        this.props.submitFormPost(post);
+        if(this.state.body.length !== 0){
+            this.props.closeModal();
+        }else{
+            this.props.openModal();
+        }
     }
 
     render(){
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    Create a Post
-                    <br />
-                    <label>What do you want to talk about?
-                        <input type="text" value={this.state.body} onChange={this.update("body")}/>
-                    </label>
-                    <br />
-                    <input type="submit" value="Post"/>
-                </form>
-            </div>
+           
+            <form onSubmit={this.handleSubmit}>
+                <h1>Create a Post</h1>
+                <hr />
+
+                <div className="post-user-header">
+                    <i className="profile"></i>
+                    <div className="name-title-recency" >
+                        <h3>{this.props.currentUser.name}</h3>
+                        <h4>Certified Tax Evader</h4>
+                        <h5>Log time ago</h5>
+                    </div>
+                
+                </div>
+                
+                <textarea  placeholder="What do you want to talk about?" value={this.state.body} onChange={this.update("body")}></textarea>
+                
+                <input type="submit" value="Post"/>
+            </form>
         )
     }
 }

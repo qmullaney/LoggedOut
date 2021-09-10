@@ -18,7 +18,7 @@ class PostIndex extends React.Component {
     }
 
     render (){
-        let postArr = Object.keys(this.props.posts).map(postId => {
+        let postArr = Object.keys(this.props.posts).reverse().map(postId => {
             
             return (
                 <li key={postId}>
