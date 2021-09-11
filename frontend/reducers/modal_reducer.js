@@ -5,7 +5,7 @@ import {
 
 const modalReducer = (state = {modal: null}, action) => {
     Object.freeze(state);
-    debugger
+  
     switch (action.type) {
         case OPEN_MODAL:
             return { modal: action.modal };

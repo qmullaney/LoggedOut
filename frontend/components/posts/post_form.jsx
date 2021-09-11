@@ -9,7 +9,8 @@ class PostForm extends React.Component {
             body: '',
             author_id: '',
             imageUrl: "",
-            imageFile: null
+            imageFile: null,
+            bodyError: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,6 +76,13 @@ class PostForm extends React.Component {
             img = null;
         }
 
+        let invalid = "";
+
+        if (this.state.body.length === 0 && !this.state.imageFile){
+            invalid = "invalid";
+        }
+
+
         return (
            
             <form onSubmit={this.handleSubmit}>
@@ -98,11 +106,11 @@ class PostForm extends React.Component {
 
                 </div>
                 
-                <div>
+                <div className="bottom">
                     <label htmlFor="gabagool" className="file-input"><AiFillPicture/></label>
                     <input id="gabagool"  type="file" name="file" onChange={this.handleAddImage}/>
 
-                    <input className="post" type="submit" value="Post"/>
+                    <input className={`post-button ${invalid}`} type="submit" value="Post"/>
                     
                 </div>
                 

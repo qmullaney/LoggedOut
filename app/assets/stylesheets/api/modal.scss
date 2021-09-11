@@ -106,17 +106,20 @@
 
             }
 
-            div{
+            .bottom{
                 display: flex;
                 justify-content: space-between;
 
-                .post{
+                text-align: center;
+
+                .post-button{
                     width: 100px;
                     height: 2.6em;
-                    box-sizing: border-box;
+                    
                     border-radius: 24px;
                     border: none;
                     
+                    text-align: center;
                     
                     font-family: 'Urbanist', sans-serif;
                     font-size: 18px;
@@ -133,6 +136,17 @@
                     }
                     
         
+                }
+
+                .invalid{
+                    background: lightgray;
+                    color: darkgrey;
+                    cursor: not-allowed;
+
+                    &:hover{
+                        background: lightgray;
+
+                    }
                 }
 
                 label {
