@@ -93,6 +93,9 @@
 }
 
 .post-index{
+
+
+
     background: rgb(226, 226, 218);
     height: 100%;
     margin-top: 20px;
@@ -101,6 +104,15 @@
     padding: 0px;
 
     
-    
+    hr{
+        
+        border: 0;
+        background-color: rgb(156, 156, 156);
+        height: 1px;
+        width: 95%;
+        color: grey;
+        margin-bottom: 15px;
+        margin-top: -5px;
+    }
     
 }

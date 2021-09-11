@@ -29,6 +29,7 @@ class PostIndex extends React.Component {
 
         return (
             <ul className="post-index section">
+                <hr />
                 {postArr} 
             </ul>
         )
