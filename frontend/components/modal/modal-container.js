@@ -5,11 +5,12 @@ import { createPost } from '../../actions/post_action';
 import Modal from './modal';
 
 const mSTP = state => ({
-    modal: state.ui.modal 
+    modal: state.ui.modal,
+    toEdit: state.ui.toEdit
 });
 
 const mDTP = dispatch => ({
-    closeModal: type => dispatch(closeModal(type)),
+    closeModal: () => dispatch(closeModal()),
     postPost: postForm => dispatch(createPost(postForm))
 })
 

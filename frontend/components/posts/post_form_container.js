@@ -18,7 +18,7 @@ const mDTP = dispatch => ({
     submitFormPost: postForm => dispatch(createPost(postForm)),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, toEdit) => dispatch(openModal(modal, toEdit))
 });
 
 export default connect(mSTP, mDTP)(PostForm);

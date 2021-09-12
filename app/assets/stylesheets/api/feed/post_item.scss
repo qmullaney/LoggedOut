@@ -7,6 +7,23 @@
 
     padding: 0px;
 
+    position: relative;
+
+    .three-dot{
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        
+        font-size: 25px;
+        color: rgb(82, 82, 82);
+
+        border-radius: 50%;
+
+        &:hover{
+            background: rgb(228, 228, 228);
+        }
+    }
+
     .post-user-header {
 
         display: flex;

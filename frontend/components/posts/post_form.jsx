@@ -6,12 +6,14 @@ class PostForm extends React.Component {
         super(props);
 
         this.state = {
-            body: '',
+            body: this.props.post.body,
             author_id: '',
-            imageUrl: "",
+            imageUrl: this.props.post.photo_url,
             imageFile: null,
             bodyError: ''
         };
+
+        
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleAddImage = this.handleAddImage.bind(this);
@@ -68,7 +70,7 @@ class PostForm extends React.Component {
 
     render(){
         let img;
-        if (this.state.imageFile){
+        if (this.state.imageUrl){
             
             img = <img src={this.state.imageUrl} alt="uploadedpic" className="uploaded-image"/>
             

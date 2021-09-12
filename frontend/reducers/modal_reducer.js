@@ -3,14 +3,14 @@ import {
     CLOSE_MODAL
 } from '../actions/modal_actions'
 
-const modalReducer = (state = {modal: null}, action) => {
+const modalReducer = (state = {}, action) => {
     Object.freeze(state);
-  
+    console.log("in modal reducer");
     switch (action.type) {
         case OPEN_MODAL:
-            return { modal: action.modal };
+            return action.modal
         case CLOSE_MODAL:
-            return { modal: null }
+            return null;
         default:
             return state;
     }

@@ -35,7 +35,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, test) => dispatch(openModal(modal, test))
 })
 
 export default connect(mSTP, mDTP)(CreatePost);
