@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { openModal } from '../../actions/modal_actions';
-import { EditDeleteDropdown } from './edit_delete_container'
+
 
 function ShowPost({ post, openModal, currentUser }) {
     let image;
@@ -16,7 +16,7 @@ function ShowPost({ post, openModal, currentUser }) {
 
     return (
         <div className="post section">
-            <EditDeleteDropdown currentUser={this.props.currentUser} openModal={}/>
+           
             <div className="post-user-header">
                 <i className="profile"></i>
                 <div className="name-title-recency" >
