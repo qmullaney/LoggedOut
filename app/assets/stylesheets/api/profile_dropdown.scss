@@ -7,6 +7,29 @@
     background-color: white;
     border: none;
     position: relative;
+    cursor: pointer;
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover div > h4, &:hover div > .downarrow{
+            color: rgb(54, 54, 54);
+            fill: rgb(54, 54, 54)
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            
+        }
+        .downarrow{
+            font-size: 17px;
+            fill: grey;
+        }
+    }
+
 }
 
 .show-dropdown{

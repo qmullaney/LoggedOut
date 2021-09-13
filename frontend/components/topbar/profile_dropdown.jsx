@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import { IoPersonCircleOutline } from "react-icons/io5";
+import {  IoMdArrowDropdown } from "react-icons/io";
 
 class ProfileDropdown extends React.Component{
     constructor(props){
@@ -29,7 +30,11 @@ class ProfileDropdown extends React.Component{
             <button onClick={this.profileClick} className="dd-button">
                 <div  className="profile" >
                     <i className="profile-icon"></i>
-                    <h4>Me</h4>
+                    <div>
+                        <h4>Me  </h4>
+                        <IoMdArrowDropdown className="downarrow"/>
+
+                    </div>
                 </div>
 
                 <ul onClick={e => e.stopPropagation()} 
