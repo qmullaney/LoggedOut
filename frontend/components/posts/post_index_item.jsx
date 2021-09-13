@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BsThreeDots } from "react-icons/bs";
-import { openModal } from '../../actions/modal_actions';
 
+import { openModal } from '../../actions/modal_actions';
+import { EditDeleteDropdown } from './edit_delete_container'
 
 function ShowPost({ post, openModal, currentUser }) {
     let image;
@@ -12,16 +12,11 @@ function ShowPost({ post, openModal, currentUser }) {
         image = null;
     }
 
-    let icon;
-    if (post.author_id === currentUser.id){
-        icon = <BsThreeDots onClick={() => openModal( "editPost", post)} className="three-dot"/>;
-    }else{
-        icon = null;
-    }
+    
 
     return (
         <div className="post section">
-            {icon}
+            <EditDeleteDropdown currentUser={this.props.currentUser} openModal={}/>
             <div className="post-user-header">
                 <i className="profile"></i>
                 <div className="name-title-recency" >
