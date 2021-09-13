@@ -14,6 +14,7 @@
  *= require_self
  */
  @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
- @import './reset.scss';
- @import './api/posts.scss';
- @import './api/users.scss';
+
+ @import './reset';
+ @import './api/posts';
+ @import './api/users';
