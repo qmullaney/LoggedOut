@@ -43,16 +43,23 @@ class LoginForm extends React.Component {
                     <i className="image"/>
 
                     <div className="signin-inputs">
-                        
-                        <label className="signin-email">Email</label>
-                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                        
-                        <label className="signin-password">Password </label>
-                        <input type="password" value={this.state.password} onChange={this.update('password')}/>
+                        <div className="input-container">
+                            <input type="text" value={this.state.email} onChange={this.update('email')}/>
+                            <label className={this.state.email.length === 0 ? "" : "full"}>Email or phone number</label>
+                        </div>
+                        <div className="input-container">
+                            <input type="password" value={this.state.password} onChange={this.update('password')}/>
+                            <label className={this.state.password.length === 0 ? "" : "full"}>Password </label>
+                        </div>
                     </div>
                     <div className="submits">
                         <input type="submit" value="Sign In" />
-                        <p>────────────   or   ───────────</p>
+                        <div className="lines">
+                            <hr />
+                            <h3>or</h3>
+                            <hr />
+
+                        </div>
 
                         <input className="demo-user" type="button" value="Sign in with Demo User" onClick={this.props.loginDemoUser}/>
 

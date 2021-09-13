@@ -42,12 +42,14 @@ class SigninAltForm extends React.Component {
                     <ul className="signin-errors">
                         {currentErrors}
                     </ul>
-                    <label>Email</label>
-                    <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                    
-                    <label>Password </label>
-                    <input type="password" value={this.state.password} onChange={this.update('password')}/>
-                
+                    <div className="input-container">
+                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
+                        <label className={this.state.email.length === 0 ? "" : "full"}>Email or phone number</label>
+                    </div>
+                    <div className="input-container">
+                        <input type="password" value={this.state.password} onChange={this.update('password')}/>
+                        <label className={this.state.password.length === 0 ? "" : "full"}>Password </label>
+                    </div>
                     <div className="submits">
                         <input type="submit" value="Sign in" />
                         <p>───────  or  ───────</p>

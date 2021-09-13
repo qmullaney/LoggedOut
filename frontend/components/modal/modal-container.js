@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
+
+import { createPost } from '../../actions/post_action';
 import Modal from './modal';
 
 const mSTP = state => ({
-    modal: state.ui.modal 
+    modal: state.ui.modal,
+    toEdit: state.ui.toEdit
 });
 
 const mDTP = dispatch => ({
-    closeModel: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    postPost: postForm => dispatch(createPost(postForm))
 })
 
 export default connect(mSTP, mDTP)(Modal);

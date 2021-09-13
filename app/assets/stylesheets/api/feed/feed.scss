@@ -6,9 +6,10 @@
     gap: 20px;
 
     width: 100vw;
-    height: 90vh;
+    
 
     background: rgb(226, 226, 218);
+    position: sticky;
 
     font-family: 'Urbanist', sans-serif;
 
@@ -22,6 +23,55 @@
 
     
 
+    }
+
+    .left-feed{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        .user-blurb{
+            margin-top: 20px;
+
+            .background{
+                background-image: asset-url("LI-Logo.png");
+                
+                height: 70px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .user-info{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+
+                .profile{
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 50%;
+                    background-image: image-url("LI-Logo.png");
+                    background: red;
+                    border: 2px solid white;
+                    position: absolute;
+                    top: -55px;
+                }
+                h1{
+                    margin-top: 27px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                h2{
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    color: darkgrey;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 
 }

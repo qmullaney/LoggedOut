@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+
+
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
+.nav{
+    font-family: 'Urbanist', sans-serif;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 4fr 2fr;
+    background-color: white;
+    
+
+    .ln {
+        justify-self: start;
+        grid-column: 2;
+        fill: rgb(10, 100, 200);
+        height: 50px;
+        width: 50px;
+    }
+
+
+    .nav-buttons{
+        justify-self: end;
+        grid-column: 3;
+        display: flex;
+        justify-content: center;
+        .home{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 50px;
+            .home-icon{
+                height: 25px;
+                width: 25px;
+                fill: rgb(82, 82, 82);
+            }
+            text-decoration: none;
+
+            h4{
+                font-size: 12px;
+                text-decoration: none;
+                color: rgb(82, 82, 82);
+            }
+
+            padding-bottom: 2px;
+            
+        }
+    
+        .profile{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 80px;
+
+            .profile-icon{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: red;
+            }
+            text-decoration: none;
+            h4{
+                font-size: 12px;
+                color: rgb(82, 82, 82);
+            }
+        }   
+        .selected {
+            border-bottom: 2px solid black;
+            .home-icon{
+                fill: black;
+
+            }
+            h4{
+                color: black;
+            }
+            
+        }
+    }
+}

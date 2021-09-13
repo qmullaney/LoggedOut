@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { AiFillPicture } from "react-icons/ai";
+import { RiArticleLine } from "react-icons/ri";
 
 import { openModal } from '../../actions/modal_actions';
 
@@ -8,20 +10,19 @@ function CreatePost({ openModal }) {
         <div className="create-post section">
             <div className="profile-button">
                 <i className="profile"></i>
-                <input type="button" onClick={openModal} value="Start a post"/>
+                <input type="button" onClick={() =>openModal("createPost")} value="Start a post"/>
             </div>
             <div className="buttons">
-                <div>
-                
+                <div onClick={() => openModal("createPost")}>
+                  
+                    <AiFillPicture className="icon blue"/>
+
                     <p>Photo</p>
                 </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>Video</p>
-                </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>Write an article</p>
+                
+                <div onClick={() =>openModal('createPost')}>
+                    <RiArticleLine className="icon pink"/>
+                    <p>Write article</p>
                 </div>
             </div>
 
@@ -34,7 +35,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    openModal: () => dispatch(openModal())
+    openModal: (modal, test) => dispatch(openModal(modal, test))
 })
 
 export default connect(mSTP, mDTP)(CreatePost);
