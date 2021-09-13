@@ -6,7 +6,7 @@ import {
 
 const toEditReducer = (state = {}, action) => {
     Object.freeze(state);
-    console.log("in edit reducer")
+    
     switch (action.type) {
         case OPEN_MODAL:
             if (!action.toEdit){

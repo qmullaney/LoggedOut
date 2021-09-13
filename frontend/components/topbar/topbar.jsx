@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AiFillHome, AiFillLinkedin } from "react-icons/ai";
+import ProfileDropdown from './profile_dropdown_container'
 
 class Topbar extends React.Component {
     constructor(props){
@@ -34,10 +35,10 @@ class Topbar extends React.Component {
                     <AiFillHome className="home-icon" />
                     <h4>Home</h4>
                 </NavLink>
-                <NavLink activeClassName="selected" className="profile" to="/signup">
-                    <i className="profile-icon"></i>
-                    <h4>Me</h4>
-                </NavLink>
+
+
+                <ProfileDropdown/>
+                
             </div>
         </nav>
 

@@ -12,7 +12,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    openDropdown: () => dispatch(openDropdown())
 })
 
 export default connect(mSTP, mDTP)(Topbar);

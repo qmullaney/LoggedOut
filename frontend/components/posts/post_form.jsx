@@ -88,7 +88,7 @@ class PostForm extends React.Component {
         return (
            
             <form onSubmit={this.handleSubmit}>
-                <h1>Create a Post</h1>
+                <h1>{this.props.modal == "createPost" ? "Create" : "Edit"} a Post</h1>
                 <hr />
 
                 <div className="post-user-header">
@@ -101,7 +101,10 @@ class PostForm extends React.Component {
                 
                 </div>
                 
-                <textarea  placeholder="What do you want to talk about?" value={this.state.body} onChange={this.update("body")}></textarea>
+                <textarea  placeholder="What do you want to talk about?" 
+                           value={this.state.body} 
+                           onChange={this.update("body")}>
+                </textarea>
 
                 <div className="imgimg">
                     {img}

@@ -11,7 +11,8 @@ import PostForm from './post_form';
 
 const mSTP = state => ({
    currentUser: state.entities.users[state.session.id],
-   error: state.errors.postCreationError
+   error: state.errors.postCreationError,
+   modal: state.ui.modal
 });
 
 const mDTP = dispatch => ({

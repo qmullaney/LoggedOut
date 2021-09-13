@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
 
 
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
 .nav{
     font-family: 'Urbanist', sans-serif;
     display: grid;
 
     grid-template-columns: 1fr 1fr 4fr 2fr;
+    background-color: white;
+    
 
     .ln {
         justify-self: start;
