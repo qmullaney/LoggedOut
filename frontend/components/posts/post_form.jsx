@@ -6,6 +6,7 @@ class PostForm extends React.Component {
         super(props);
 
         this.state = {
+            id: this.props.post.id,
             body: this.props.post.body,
             author_id: '',
             imageUrl: this.props.post.photo_url,
@@ -35,14 +36,24 @@ class PostForm extends React.Component {
         const formData = new FormData();
         formData.set('post[body]', this.state.body);
         formData.set('post[author_id]', this.props.currentUser.id);
+        if (this.props.toEdit){
+            formData.set('post[id]', this.state.id);
+        }
+        
+
 
         if (this.state.imageFile) {
             formData.append('post[photo]', this.state.imageFile);
         }
+      
+        if (this.props.toEdit){
+            this.props.editFormPost({form: formData, postId: this.state.id});
+        }else{
+            this.props.submitFormPost(formData);
+        }
 
         
 
-        this.props.submitFormPost(formData);
 
 
         if(this.state.body.length !== 0){

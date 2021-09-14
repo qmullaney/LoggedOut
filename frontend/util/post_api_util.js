@@ -13,28 +13,32 @@ export const fetchPost = postId => (
     })
 );
 
-export const createPost = postForm => (
-    $.ajax({
+export const createPost = postForm => {
+    
+    return $.ajax({
         method: 'POST',
         url: 'api/posts',
         data: postForm,
         contentType: false,
         processData: false
     })
-);
+};
 
 export const deletePost = postId => (
     $.ajax({
         method: 'DELETE',
-        url: 'api/posts',
+        url: `api/posts/${postId}`,
         data: { postId }
     })
 );
 
-export const editPost = postInfo => {
-    $.ajax({
+export const editPost = incoming => {
+  
+    return $.ajax({
         method: 'PATCH',
-        url: `api/posts/${postInfo.id}`,
-        data: { postInfo }
+        url: `api/posts/${incoming.postId}`,
+        data: incoming.form,
+        contentType: false,
+        processData: false
     })
 }

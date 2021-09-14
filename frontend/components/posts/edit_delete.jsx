@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsTrashFill, BsPencil } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ class EditDeleteDropdown extends React.Component{
         super(props);
 
         this.state = {
-            show: true
+            show: false
         }
 
         this.dotClick = this.dotClick.bind(this);
@@ -21,10 +21,11 @@ class EditDeleteDropdown extends React.Component{
         })
     };
 
+
     render(){
 
         
-        if (post.author_id !== currentUser.id){
+        if (this.props.post.author_id !== this.props.currentUser.id){
             return null;
         }
 
@@ -32,13 +33,16 @@ class EditDeleteDropdown extends React.Component{
             <button onClick={this.dotClick} className="ddd-button">
                 <BsThreeDots className="dots-icon"/>
 
-                <ul onClick={e => e.stopPropagation()} className={this.state.show ? "show-dots" : ""}>
-                    {/* <div onClick={}>
-
+                <ul onClick={e => e.stopPropagation()} className={this.state.show ? "show-dots" : "clear"}>
+                    <div onClick={() => {this.props.openModal("editPost", this.props.post); this.dotClick();} }>
+                        <BsPencil className="pencil"/>
+                        <h3>Edit Post</h3>
                     </div>
-                    <div onClick={}>
-
-                    </div> */}
+                    {console.log(this.props.post.id)}
+                    <div onClick={() => this.props.deletePost(this.props.post.id)}>
+                        <BsTrashFill className="pencil"/>
+                        <h3>Delete Post</h3>
+                    </div>
                 </ul>    
             </button>
         )

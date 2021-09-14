@@ -9,18 +9,73 @@
 
     position: relative;
 
-    .three-dot{
+    .ddd-button{
+        background-color: white;
+        border: none;
         position: absolute;
         top: 7px;
-        right: 10px;
+        right: 5px;
         
-        font-size: 25px;
-        color: rgb(82, 82, 82);
+        
 
-        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        &:hover{
-            background: rgb(228, 228, 228);
+        .dots-icon{
+            height: 25px;
+            width: 25px;
+            color: rgb(82, 82, 82);
+
+            border-radius: 50%;
+            font-size: 25px;
+            &:hover{
+                background: rgb(228, 228, 228);
+            }
+        }
+
+        
+        .show-dots{
+            position: absolute;
+            background-color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 7px;
+
+            z-index: 50;
+            right: 0;
+            top: 30px;
+            display: flex;
+            flex-direction: column;
+            
+            box-shadow: 0px 0px 10px 1px lightgrey;
+            div{
+                display: flex;
+                width: 200px;
+                padding: 10px;
+                align-items: center;
+                
+                cursor: pointer;
+                .pencil{
+                    fill: rgb(82, 82, 82);
+                    height: 20px;
+                    width: 20px;
+                }
+
+                h3{
+                    padding-left: 5px;
+                    font-weight: bold;
+                }
+
+                &:hover{
+                    background-color: lightgrey;
+                }
+            }
+
+        }
+
+        .clear{
+            visibility: hidden;
         }
     }
 

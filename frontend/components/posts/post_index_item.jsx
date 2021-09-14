@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { openModal } from '../../actions/modal_actions';
+import EditDeleteDropdown from './edit_delete_container'
 
-
-function ShowPost({ post, openModal, currentUser }) {
+function ShowPost({ post, currentUser }) {
     let image;
     if (post.photo_url){
         image = <img src={post.photo_url} alt="userimage" />
@@ -16,7 +16,8 @@ function ShowPost({ post, openModal, currentUser }) {
 
     return (
         <div className="post section">
-           
+          
+            <EditDeleteDropdown currentUser={currentUser} post={post}/>
             <div className="post-user-header">
                 <i className="profile"></i>
                 <div className="name-title-recency" >

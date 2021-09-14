@@ -10,7 +10,7 @@ const toEditReducer = (state = {}, action) => {
     switch (action.type) {
         case OPEN_MODAL:
             if (!action.toEdit){
-                action.toEdit = "";
+                action.toEdit = null;
             }
             return action.toEdit;
         case CLOSE_MODAL: 
