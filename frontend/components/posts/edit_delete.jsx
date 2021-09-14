@@ -11,10 +11,10 @@ class EditDeleteDropdown extends React.Component{
             show: false
         }
 
-        this.dotClick = this.dotClick.bind(this);
+        this.blurOrNah = this.blurOrNah.bind(this);
     }
 
-    dotClick(e){
+    blurOrNah(e){
         let opposite = !this.state.show;
         this.setState({
             show: opposite
@@ -30,15 +30,15 @@ class EditDeleteDropdown extends React.Component{
         }
 
         return (
-            <button onClick={this.dotClick} className="ddd-button">
+            <button onBlur={this.blurOrNah} onFocus={this.blurOrNah} className="ddd-button">
                 <BsThreeDots className="dots-icon"/>
 
                 <ul onClick={e => e.stopPropagation()} className={this.state.show ? "show-dots" : "clear"}>
-                    <div onClick={() => {this.props.openModal("editPost", this.props.post); this.dotClick();} }>
+                    <div onClick={() => this.props.openModal("editPost", this.props.post) }>
                         <BsPencil className="pencil"/>
                         <h3>Edit Post</h3>
                     </div>
-                    {console.log(this.props.post.id)}
+                    
                     <div onClick={() => this.props.deletePost(this.props.post.id)}>
                         <BsTrashFill className="pencil"/>
                         <h3>Delete Post</h3>

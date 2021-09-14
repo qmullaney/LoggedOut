@@ -23,6 +23,7 @@ const App = () => (
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
         </header>
+        
         <ProtectedRoute exact path="/feed" component={feedContainer}/>
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>

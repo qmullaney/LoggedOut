@@ -10,10 +10,18 @@ class ProfileDropdown extends React.Component{
         this.state = {
             show: false
         }
-        this.profileClick = this.profileClick.bind(this);
+        // this.profileClick = this.profileClick.bind(this);
+        this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
     }
 
-    profileClick(e){
+    // profileClick(e){
+    //     let opposite = !this.state.show
+    //     this.setState({
+    //         show: opposite
+    //     })
+    // }
+
+    whenFocusOrBlur(e){
         let opposite = !this.state.show
         this.setState({
             show: opposite
@@ -27,7 +35,7 @@ class ProfileDropdown extends React.Component{
         
         return (
         <div>
-            <button onClick={this.profileClick} className="dd-button">
+            <button onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur} className="dd-button" >
                 <div  className="profile" >
                     <i className="profile-icon"></i>
                     <div>

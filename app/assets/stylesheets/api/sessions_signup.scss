@@ -1,5 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 .signup-main{
     width: 100vw;
@@ -24,7 +22,7 @@
 
     h1{
         font-size: 30px;
-        font-family: 'Urbanist', sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .signup-session{
@@ -43,11 +41,11 @@
         padding-right: 30px;
         margin-top: 30px;
 
-        font-family: 'Urbanist', sans-serif;
+        font-family: 'Open Sans', sans-serif;
 
         .signup-errors{
             color: red;
-            font-family: 'Urbanist', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             align-self: flex-start;
         }
@@ -93,7 +91,7 @@
                 border: none;
                 
                 
-                font-family: 'Urbanist', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 font-size: 18px;
                 color: white;
 
