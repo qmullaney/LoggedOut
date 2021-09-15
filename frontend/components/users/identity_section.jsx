@@ -16,15 +16,16 @@ class IdentitySection extends React.Component {
         const { user, currentUser, ownProfile, openModal } = this.props;
 
         let img;
-
-        if (user.profile_url && ownProfile){
-            img = <img className="user_profile" src={user.profile_url} alt="user_profile" onClick={() => openModal("profilePic", currentUser)} />
-        }else if (user.profile_url && !ownProfile){
-            img = <img className="user_profile" src={user.profile_url} alt="user_profile" />
+        console.log(ownProfile);
+        if (!!user.profile_url && ownProfile){
+            img = <img className="user-profile" src={user.profile_url} alt="user-profile" onClick={() => openModal("profilePic", currentUser)} />
+        }else if (!!user.profile_url && !ownProfile){
+            img = <img className="user-profile" src={user.profile_url} alt="user-profile" />
         }else if (!user.profile_url && ownProfile){
-            img = <IoPersonCircleOutline className="user_profile" onClick={() => openModal("profilePic", currentUser)} />
+            img = <IoPersonCircleOutline className="user-profile" onClick={() => openModal("profilePic", currentUser)} />
+            
         }else if (!user.profile_url && !ownProfile){
-            img = <IoPersonCircleOutline className="user_profile" />
+            img = <IoPersonCircleOutline className="user-profile" />
         }else{
             img = <div>ERROR, something in pics, id_section</div>
         }
@@ -40,7 +41,7 @@ class IdentitySection extends React.Component {
 
 
         return (
-            <div className="section identity">
+            <div className="identity">
                 <img className="default-background" src="https://static-exp1.licdn.com/sc/h/5q92mjc5c51bjlwaj3rs9aa82" alt="default background" />
 
                 {img}

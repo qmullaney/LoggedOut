@@ -10,11 +10,11 @@ class PostIndex extends React.Component {
     constructor(props){
         super(props);
 
-        this.posts;
+        
     }
 
     componentDidMount(){
-        this.posts = this.props.getPosts();
+        this.props.getPosts();
     }
 
     render (){

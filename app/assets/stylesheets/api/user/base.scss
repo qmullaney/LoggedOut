@@ -1,0 +1,15 @@
+.profile-base{
+    display: grid;
+    grid-template-columns: 12.5% 1fr 30%;
+
+    width: 100vw;
+
+    position: sticky;
+
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(226, 226, 218);
+
+    .identity{
+        grid-column: 2/3;
+    }
+}

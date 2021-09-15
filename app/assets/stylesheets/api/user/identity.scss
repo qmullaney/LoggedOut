@@ -1,0 +1,53 @@
+.identity{
+    background-color: white;
+    position: relative;
+    
+    border-radius: 10px;
+
+    margin: 20px;
+
+    .default-background{
+        border-top-left-radius:  10px;
+        border-top-right-radius: 10px ;
+        max-width: 100%;
+        min-height: 190px;
+        object-fit: cover;
+    }
+
+    .user-profile{
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 90px;
+        left: 20px;
+        background-color: lightgrey;
+
+        border: 5px solid white;
+        border-radius: 50%;
+    }
+
+    .edit-pencil{
+        position: absolute;
+        font-size: 27px;
+        fill: rgb(80, 80, 80);
+        top: 210px;
+        right: 20px;
+    }
+
+    h1{
+        margin-top: 70px;
+        margin-left: 30px;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    h2{
+        margin-left: 30px;
+        font-size: 20px;
+    }
+    h3{
+        margin-left: 30px;
+        font-size: 15x;
+        color: grey;
+    }
+}

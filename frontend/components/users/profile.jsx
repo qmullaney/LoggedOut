@@ -7,21 +7,34 @@ class Home extends React.Component {
     constructor(props){
         super(props);
 
-        this.user;
+        
     }
 
     componentDidMount(){
-        this.props.fetchUser(userId);
-        this.user = users[userId];
+        
+        this.props.fetchUser(this.props.userId);
+
+        
     }
-
+    
     render (){
-
+        let idSection;
+        if (this.props.users[this.props.userId]){
+            
+            idSection = <IdentitySection user={this.props.users[this.props.userId]} 
+                                  currentUser={this.props.currentUser} 
+                                  ownProfile={this.props.currentUser.id == this.props.userId} /> 
+        }else{
+            idSection = null;
+        }
+        
         return(
+            
 
-            <div className="home">
-                <IdentitySection user={this.user} currentUser={this.props.currentUser} ownProfile={this.props.currentUser == this.props.userId} />
-                Hello
+
+            <div className="profile-base">
+                {idSection}
+                
             </div>
         )
 

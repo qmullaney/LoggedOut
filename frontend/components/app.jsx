@@ -18,15 +18,15 @@ import Modal from './modal/modal-container';
 
 
 const App = () => (
-    <div>
+    <div className="app">
         <Modal/>
         <header>
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
-            <Route path="/user/" component={topbarContainer}/>
+            <Route path="/user" component={topbarContainer}/>
 
         </header>
-        <ProtectedRoute path="/user/:id" component={Profile}/>
+        <Route path="/user/:id" component={Profile}/>
         <ProtectedRoute exact path="/feed" component={feedContainer}/>
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>
