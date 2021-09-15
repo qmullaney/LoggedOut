@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsPencil } from "react-icons/bs";
-import openModal from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 
 class IdentitySection extends React.Component {
     constructor(props){
@@ -42,7 +42,7 @@ class IdentitySection extends React.Component {
         return (
             <div className="section identity">
                 <img className="default-background" src="https://static-exp1.licdn.com/sc/h/5q92mjc5c51bjlwaj3rs9aa82" alt="default background" />
-                
+
                 {img}
                 {edit}
                 <h1>{user.name}</h1>

@@ -63,7 +63,7 @@ class PostForm extends React.Component {
 
         const file = e.currentTarget.files[0];
 
-        
+      
         
         reader.onloadend = () => this.setState({ imageUrl: reader.result, imageFile: file });
         

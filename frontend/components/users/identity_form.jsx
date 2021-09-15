@@ -21,13 +21,13 @@ class IdentityForm extends React.Component {
     handlePicture(e){
         e.preventDefault();
 
-        const formData = new FormData();
-        formData.set('user[id]', this.state.id);
-        formData.set('user[photo]', this.state.photo);
-
+        
         const file = e.currentTarget.files[0];
-
+        
         if (file){
+            const formData = new FormData();
+            formData.set('user[id]', this.state.id);
+            
             this.setState({ imageFile: file });
             formData.set('user[photo]', this.state.imageFile)
             this.props.editUser({form: formData, userId: this.state.id});

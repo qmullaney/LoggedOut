@@ -21,6 +21,7 @@ class Home extends React.Component {
 
             <div className="home">
                 <IdentitySection user={this.user} currentUser={this.props.currentUser} ownProfile={this.props.currentUser == this.props.userId} />
+                Hello
             </div>
         )
 

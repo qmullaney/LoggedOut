@@ -23,7 +23,7 @@ const App = () => (
         <header>
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
-            <Route path="/user" component={topbarContainer}/>
+            <Route path="/user/" component={topbarContainer}/>
 
         </header>
         <ProtectedRoute path="/user/:id" component={Profile}/>
