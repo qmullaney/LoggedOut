@@ -13,6 +13,7 @@ import loginFormContainer from './session_form/login_form_container';
 import signinAltContainer from './session_form/signin_alt_container';
 import topbarContainer from './topbar/topbar_container';
 import feedContainer from './posts/feed_container';
+import Profile from './users/profile';
 import Modal from './modal/modal-container';
 
 
@@ -22,8 +23,10 @@ const App = () => (
         <header>
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
+            <Route path="/user" component={topbarContainer}/>
+
         </header>
-        
+        <ProtectedRoute path="/user/:id" component={Profile}/>
         <ProtectedRoute exact path="/feed" component={feedContainer}/>
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>

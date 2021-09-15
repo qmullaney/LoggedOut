@@ -52,10 +52,6 @@ class PostForm extends React.Component {
             this.props.submitFormPost(formData);
         }
 
-        
-
-
-
         if(this.state.body.length !== 0){
             this.props.closeModal();
         }
