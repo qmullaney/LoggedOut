@@ -32,7 +32,7 @@ class SignupForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         let newName = this.state.firstName + " " + this.state.lastName;
-        this.props.signup({name: newName, email: this.state.email, password: this.state.password}).then(this.setState({emailPage: true}));
+        this.props.signup({user:{name: newName, email: this.state.email, password: this.state.password}}).then(this.setState({emailPage: true}));
     }
 
     handleMoveOn(e){

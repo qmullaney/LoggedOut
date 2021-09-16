@@ -16,7 +16,7 @@ class IdentitySection extends React.Component {
         const { user, currentUser, ownProfile, openModal } = this.props;
 
         let img;
-        console.log(ownProfile);
+        
         if (!!user.profile_url && ownProfile){
             img = <img className="user-profile" src={user.profile_url} alt="user-profile" onClick={() => openModal("profilePic", currentUser)} />
         }else if (!!user.profile_url && !ownProfile){
@@ -33,7 +33,8 @@ class IdentitySection extends React.Component {
 
         let edit
         if (ownProfile){
-            edit = <BsPencil onClick={() => openModal("identity", currentUser)} className="edit-pencil" />
+            edit = 
+            <div className="edit-pencil-circle"><BsPencil onClick={() => openModal("identity", currentUser)} className="edit-pencil" /> </div>
         }else{
             edit = null;
         }

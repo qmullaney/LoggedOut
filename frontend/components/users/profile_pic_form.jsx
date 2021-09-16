@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsX, BsTrashFill, BsPencil } from "react-icons/bs";
-import closeModal from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { editUser } from '../../actions/user_actions'
 
-class IdentityForm extends React.Component {
+class ProfilePicForm extends React.Component {
     constructor(props){
         super(props);
 
@@ -16,6 +16,7 @@ class IdentityForm extends React.Component {
         }
 
         this.handlePicture = this.handlePicture.bind(this);
+        this.deleteProfilePic = this.deleteProfilePic.bind(this);
     }
 
     handlePicture(e){
@@ -29,32 +30,59 @@ class IdentityForm extends React.Component {
             formData.set('user[id]', this.state.id);
             
             this.setState({ imageFile: file });
-            formData.set('user[photo]', this.state.imageFile)
+            formData.set('user[photo]', file)
+
+            
             this.props.editUser({form: formData, userId: this.state.id});
+
+            this.props.closeModal();
         }
 
 
     }
 
+    deleteProfilePic(e){
+        e.preventDefault();
+
+        const formData = new FormData();
+        
+        
+        
+        formData.set('user[photo]', "empty")
+        this.props.editUser({form: formData, userId: this.state.id});
+    
+
+        this.props.closeModal();
+    }
+
     render(){
+        let img;
+        if (this.props.toEdit.profile_url){
+            img = <img src={ this.props.toEdit.profile_url } alt="profile image" className="im"/> ;
+        }else{
+            img = <IoPersonCircleOutline className="im" />
+        }
         return (
             <div className="pf-modal">
                 <h1>Profile Photo</h1>
-                <img src={ this.props.toEdit.user.profile_url } alt="profile image" /> 
+                {img}
 
-                <BsX className="x"/>
+                <BsX className="x" onClick={this.props.closeModal}/>
 
                 <hr />
 
                 <div className="button-bar">
-                    <div className="pf-button">
+                    <label className="pf-button" htmlFor="profile-file-input">
                         <BsPencil />
                         <h2>Edit</h2>
-                    </div>
-                    <div className="pf-button">
+                    </label>
+                    <input onChange={this.handlePicture}  type="file" id="profile-file-input" name="file" />
+
+                    <div className="pf-button" onClick={this.deleteProfilePic}  >
                         <BsTrashFill />
                         <h2>Delete</h2>
                     </div>
+
                 </div>
             </div>
         )
@@ -66,7 +94,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    editUser: input => dispatch(editUser(input))
+    editUser: input => dispatch(editUser(input)),
+    closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mSTP, mDTP)(IdentityForm);
+export default connect(mSTP, mDTP)(ProfilePicForm);

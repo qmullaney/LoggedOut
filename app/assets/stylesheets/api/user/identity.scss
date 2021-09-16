@@ -24,14 +24,36 @@
 
         border: 5px solid white;
         border-radius: 50%;
+
+        cursor: pointer;
     }
 
-    .edit-pencil{
+    .edit-pencil-circle{
         position: absolute;
-        font-size: 27px;
-        fill: rgb(80, 80, 80);
+
+        
+        
+        fill: rgb(107, 107, 107);
         top: 210px;
         right: 20px;
+        border-radius: 50%;
+        
+        height: 35px;
+        width: 35px;
+
+        &:hover{
+            background-color: rgb(216, 216, 216);
+            cursor: pointer;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .edit-pencil{
+            height: 20px;
+            width: 20px;
+            visibility: hidden;
+        }
     }
 
     h1{
@@ -49,5 +71,6 @@
         margin-left: 30px;
         font-size: 15x;
         color: grey;
+        margin-bottom: 30px;
     }
 }

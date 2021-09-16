@@ -32,6 +32,7 @@
 
         .user-blurb{
             margin-top: 20px;
+            width: 50%;
 
             .background{
                 background-image: asset-url("LI-Logo.png");
@@ -49,20 +50,62 @@
                 position: relative;
 
                 .profile{
-                    height: 60px;
-                    width: 60px;
-                    border-radius: 50%;
-                    background-image: image-url("LI-Logo.png");
-                    background: red;
-                    border: 2px solid white;
-                    position: absolute;
-                    top: -55px;
+                    position: relative;
+                    text-decoration: none;
+                    color: black;
+
+                    &:active{
+                        color: none;
+                    }
+
+                    &:hover{
+                        text-decoration: underline;
+                        text-decoration-color: rgb(10, 100, 200);
+                    }
+                    
+                    img{
+                        position: absolute;
+                        top: -55px;
+                        
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        height: 60px;
+                        width: 60px;
+
+                        
+                        margin-left: auto;
+                        margin-right: auto;
+                        left: 0;
+                        right: 0;
+                        
+                    }
+
+                    h1{
+                        margin-top: 27px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                        
+                    }
+                    
+                    .empty-profile{
+                        position: absolute;
+                        top: -55px;
+                        
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        height: 60px;
+                        width: 60px;
+
+                        
+                        margin-left: auto;
+                        margin-right: auto;
+                        left: 0;
+                        right: 0;
+
+                        background-color: lightgrey;
+                    }
                 }
-                h1{
-                    margin-top: 27px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
+                
                 h2{
                     margin-left: 10px;
                     margin-right: 10px;

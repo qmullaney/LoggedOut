@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import {  IoMdArrowDropdown } from "react-icons/io";
+import { withRouter } from 'react-router-dom';
 
 class ProfileDropdown extends React.Component{
     constructor(props){
@@ -12,6 +13,9 @@ class ProfileDropdown extends React.Component{
         }
         // this.profileClick = this.profileClick.bind(this);
         this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
+
+        
     }
 
     // profileClick(e){
@@ -20,22 +24,47 @@ class ProfileDropdown extends React.Component{
     //         show: opposite
     //     })
     // }
+   
 
     whenFocusOrBlur(e){
         let opposite = !this.state.show
-        this.setState({
-            show: opposite
-        })
+
+        
+        if (e.relatedTarget){
+            
+            console.log("in profile")
+
+            if (e.relatedTarget.className == 'profile-navlink'){
+                
+            }else{
+                
+                this.setState({
+                    show: opposite
+                })
+            }
+        }else{
+            console.log('it flips');
+            this.setState({
+                show: opposite
+            })
+        }
+        
+        
+    }
+
+    handleLogout(e){
+        this.props.logout().then(this.props.history.push('/'));
     }
 
     render(){
         
         
         const profImg = <IoPersonCircleOutline className="prof-img"/>
+
         
         return (
-        <div>
-            <button onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur} className="dd-button" >
+        
+            <button  onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur} className="dd-button"   >
                 <div  className="profile" >
                     <i className="profile-icon"></i>
                     <div>
@@ -57,17 +86,17 @@ class ProfileDropdown extends React.Component{
                         </div>
                     </li>
                     
-                        <NavLink to="/profile" className="profile-navlink">View Profile</NavLink>
+                        <NavLink to={`/user/${this.props.currentUser.id}`} className="profile-navlink">View Profile</NavLink>
                         <hr />
-                    <li className="logout" onClick={this.props.logout}> 
+                    <li className="logout" onClick={this.handleLogout}> 
                         Sign Out
                     </li>
                     
                 </ul>
             </button>
-        </div>
+        
         )
     }
 }
 
-export default ProfileDropdown;
+export default withRouter(ProfileDropdown);

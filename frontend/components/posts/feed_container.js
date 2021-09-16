@@ -1,4 +1,12 @@
 import { connect } from 'react-redux';
 import Feed from './feed';
 
-export default connect()(Feed)
+const mSTP = state => ({
+    currentUser: state.entities.users[state.session.id]
+})
+
+const mDTP = dispatch => ({
+    
+})
+
+export default connect(mSTP, mDTP)(Feed)

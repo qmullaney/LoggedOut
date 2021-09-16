@@ -2,6 +2,7 @@
 import React from 'react';
 
 import  PostFormContainer  from '../posts/post_form_container';
+import ProfilePicForm from '../users/profile_pic_form'
 
 class Modal extends React.Component {
     constructor(props){
@@ -17,8 +18,9 @@ class Modal extends React.Component {
         }else if(this.props.modal == "editPost"){
          
             component = <PostFormContainer post={this.props.toEdit}/>;
+        }else if( this.props.modal == 'profilePic'){
+            component = <ProfilePicForm />
         }else{
-            
             return null;
         } 
 
