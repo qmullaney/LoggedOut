@@ -32,7 +32,7 @@ class ProfileDropdown extends React.Component{
         
         if (e.relatedTarget){
             
-            console.log("in profile")
+           
 
             if (e.relatedTarget.className == 'profile-navlink'){
                 
@@ -43,7 +43,7 @@ class ProfileDropdown extends React.Component{
                 })
             }
         }else{
-            console.log('it flips');
+           
             this.setState({
                 show: opposite
             })
