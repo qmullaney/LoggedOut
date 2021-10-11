@@ -24,9 +24,7 @@ class ProfileDropdown extends React.Component{
     }
 
     handleClick(e){
-        console.log("here");
         let opposite = !this.state.show;
-        debugger
         let path = e.path || e.composedPath();
         let classPath = path.map(el => ( el.className));
 

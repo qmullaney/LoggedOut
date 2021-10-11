@@ -11,16 +11,37 @@ class EditDeleteDropdown extends React.Component{
             show: false
         }
 
-        this.blurOrNah = this.blurOrNah.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    blurOrNah(e){
-        let opposite = !this.state.show;
-        this.setState({
-            show: opposite
-        })
-    };
+    componentDidMount(){
+        let d = document.getElementById("root");
+        d.addEventListener("click",this.handleClick);
+    }
 
+
+    handleClick(e){
+        let opposite = !this.state.show;
+        let path = e.path || e.composedPath();
+        let classPath = path.map(el => ( el.className));
+
+        // debugger
+        if(classPath.includes(this.props.post.id.toString())){
+            this.setState({
+                show: opposite
+                
+            })
+        }else{
+            this.setState({
+                show: false
+            })
+        }
+    }
+
+    componentWillUnmount(){
+        let b = document.getElementById("root");
+        b.removeEventListener('click', this.handleClick);
+    }
 
     render(){
 
@@ -30,7 +51,8 @@ class EditDeleteDropdown extends React.Component{
         }
 
         return (
-            <button onBlur={this.blurOrNah} onFocus={this.blurOrNah} className="ddd-button">
+            <button className="ddd-button">
+                <div className={`${this.props.post.id}`}>
                 <BsThreeDots className="dots-icon"/>
 
                 <ul onClick={e => e.stopPropagation()} className={this.state.show ? "show-dots" : "clear"}>
@@ -44,6 +66,7 @@ class EditDeleteDropdown extends React.Component{
                         <h3>Delete Post</h3>
                     </div>
                 </ul>    
+                </div>
             </button>
         )
     }

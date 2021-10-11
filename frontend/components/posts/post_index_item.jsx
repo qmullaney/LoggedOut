@@ -12,12 +12,11 @@ function ShowPost({ post, currentUser }) {
         image = null;
     }
 
-    
-
+   
     return (
         <div className="post section">
           
-            <EditDeleteDropdown currentUser={currentUser} post={post}/>
+            <EditDeleteDropdown currentUser={currentUser} post={post} key={post.id}  />
             <div className="post-user-header">
                 <i className="profile"></i>
                 <div className="name-title-recency" >
