@@ -12,45 +12,67 @@ class ProfileDropdown extends React.Component{
             show: false
         }
         // this.profileClick = this.profileClick.bind(this);
-        this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
+        // this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
-
+        this.handleClick =  this.handleClick.bind(this);
         
     }
 
-    // profileClick(e){
-    //     let opposite = !this.state.show
-    //     this.setState({
-    //         show: opposite
-    //     })
-    // }
-   
+    componentDidMount(){
+        let b = document.getElementById("root");
+        b.addEventListener('click', this.handleClick);
+    }
 
-    whenFocusOrBlur(e){
-        let opposite = !this.state.show
+    handleClick(e){
+        console.log("here");
+        let opposite = !this.state.show;
+        debugger
+        let path = e.path || e.composedPath();
+        let classPath = path.map(el => ( el.className));
 
-        
-        if (e.relatedTarget){
-            
-           
 
-            if (e.relatedTarget.className == 'profile-navlink'){
-                
-            }else{
-                
-                this.setState({
-                    show: opposite
-                })
-            }
-        }else{
-           
+        if(classPath.includes('dd-button')){
             this.setState({
                 show: opposite
             })
+        }else{
+            this.setState({
+                show: false
+            })
         }
-        
-        
     }
+
+    componentWillUnmount(){
+        let b = document.getElementById("root");
+        b.removeEventListener('click', this.handleClick);
+    }
+
+    // profileClick(e){
+    //     this.whenFocusOrBlur(e);
+    // }
+   
+
+    // whenFocusOrBlur(e){
+    //     let opposite = !this.state.show
+        
+    //     if (e.relatedTarget){
+
+    //         if (e.relatedTarget.className == 'profile-navlink'){
+                
+    //         }else{
+                
+    //             this.setState({
+    //                 show: opposite
+    //             })
+    //         }
+    //     }else{
+           
+    //         this.setState({
+    //             show: opposite
+    //         })
+    //     }
+        
+    // }
 
     handleLogout(e){
         this.props.logout().then(this.props.history.push('/'));
@@ -60,12 +82,12 @@ class ProfileDropdown extends React.Component{
         
         
         const profImg = <IoPersonCircleOutline className="prof-img"/>
-
+        // onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur}
         
         return (
         
-            <button  onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur} className="dd-button"   >
-                <div  className="profile" >
+            <div  onClick={this.profileClick} className="dd-button"   >
+                <div  className="profile"  >
                     <i className="profile-icon"></i>
                     <div>
                         <h4>Me  </h4>
@@ -93,7 +115,7 @@ class ProfileDropdown extends React.Component{
                     </li>
                     
                 </ul>
-            </button>
+            </div>
         
         )
     }
