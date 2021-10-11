@@ -18,6 +18,8 @@ class Home extends React.Component {
     }
     
     render (){
+        
+
         let idSection;
         if (this.props.users[this.props.userId]){
             

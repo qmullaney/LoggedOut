@@ -2,7 +2,8 @@
 import React from 'react';
 
 import  PostFormContainer  from '../posts/post_form_container';
-import ProfilePicForm from '../users/profile_pic_form'
+import ProfilePicForm from '../users/profile_pic_form';
+import IntroForm from '../users/intro_form';
 
 class Modal extends React.Component {
     constructor(props){
@@ -16,10 +17,11 @@ class Modal extends React.Component {
             let emptyPost = {body: "", imageUrl: "", imageFile: null};
             component = <PostFormContainer post={emptyPost}/>;
         }else if(this.props.modal == "editPost"){
-         
             component = <PostFormContainer post={this.props.toEdit}/>;
         }else if( this.props.modal == 'profilePic'){
             component = <ProfilePicForm />
+        }else if( this.props.modal == 'identity'){
+            component = <IntroForm user={this.props.toEdit} />
         }else{
             return null;
         } 
