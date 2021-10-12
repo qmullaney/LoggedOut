@@ -24,7 +24,8 @@ class Api::UsersController < ApplicationController
 
 
     def update
-        @user = User.find_by(id: params[:id])
+        id = params[:id] || params[:user][:id]
+        @user = User.find_by(id: id)
 
         if params[:user][:photo] == "empty"
             @user.photo.purge
@@ -41,6 +42,6 @@ class Api::UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:email, :name, :password, :photo)
+        params.require(:user).permit(:id, :email, :name, :password, :photo, :headline, :location, :pronouns)
     end
 end

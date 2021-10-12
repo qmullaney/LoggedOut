@@ -47,9 +47,13 @@ class IdentitySection extends React.Component {
 
                 {img}
                 {edit}
-                <h1>{user.name}</h1>
-                <h2>{user.title}</h2>
-                <h3>{user.area}</h3>
+                <div className="name-pro" >
+                    <h1>{user.name} </h1>
+                    <p>{`(${user.pronouns})` || ""} </p>
+                </div>
+                <h2>{user.headline}</h2>
+                <h3>{user.location || ""}</h3>
+
             </div>
         )
     }
