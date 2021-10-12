@@ -4,6 +4,7 @@ import React from 'react';
 import  PostFormContainer  from '../posts/post_form_container';
 import ProfilePicForm from '../users/profile_pic_form';
 import IntroForm from '../users/intro_form';
+import AboutForm from '../users/about_form';
 
 class Modal extends React.Component {
     constructor(props){
@@ -21,7 +22,9 @@ class Modal extends React.Component {
         }else if( this.props.modal == 'profilePic'){
             component = <ProfilePicForm />
         }else if( this.props.modal == 'identity'){
-            component = <IntroForm user={this.props.toEdit} />
+            component = <IntroForm user={this} />
+        }else if( this.props.modal == 'about'){
+            component = <AboutForm user={this.props.toEdit} />
         }else{
             return null;
         } 

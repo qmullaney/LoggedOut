@@ -19,7 +19,7 @@ class AboutSection extends React.Component {
         let edit
         if (ownProfile){
             edit = 
-            <div className="edit-pencil-circle"><BsPencil onClick={() => openModal("identity", currentUser)} className="edit-pencil" /> </div>
+            <div className="edit-pencil-circle"><BsPencil onClick={() => openModal("about", currentUser)} className="edit-pencil" /> </div>
         }else{
             edit = null;
         }
@@ -27,7 +27,7 @@ class AboutSection extends React.Component {
 
 
         return (
-            <div className="identity">
+            <div className="about">
                 {edit}
                 
                 <h2>About</h2>

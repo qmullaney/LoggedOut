@@ -12,6 +12,18 @@
         height: 30px;
     }
 
+    textarea{
+        border: 1px solid rgb(63, 63, 63);
+
+        &:hover{
+            border: 2px solid rgb(63, 63, 63);
+        }
+
+        &:focus{
+            border: 2px solid rgb(63, 63, 63);
+        }
+    }
+
     label{
         font-size: 12px;
         color: rgb(102, 102, 102);
