@@ -25,7 +25,7 @@ class AboutSection extends React.Component {
         }
 
 
-
+        console.log(user);
         return (
             <div className="about">
                 {edit}

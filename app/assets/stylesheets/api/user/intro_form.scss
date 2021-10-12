@@ -12,9 +12,11 @@
         height: 30px;
     }
 
-    textarea{
-        border: 1px solid rgb(63, 63, 63);
-
+    .textarea{
+        box-sizing: border-box;
+        border: solid 5px rgb(63, 63, 63);
+        border-radius: 5px;
+        padding: 5px;
         &:hover{
             border: 2px solid rgb(63, 63, 63);
         }

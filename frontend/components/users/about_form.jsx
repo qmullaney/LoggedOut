@@ -39,7 +39,7 @@ class IntroForm extends React.Component{
                 <BsX className="x" onClick={this.props.closeModal} />
                 <hr />
                 <label >Description</label>
-                <textarea  placeholder="You can write about your years of experience, industry, or skill. People also talk about their achievements or previous job experiences." 
+                <textarea className="textarea" placeholder="You can write about your years of experience, industry, or skill. People also talk about their achievements or previous job experiences." 
                            value={this.state.about || ""} 
                            onChange={this.handleChange("about")}>
                 </textarea>
