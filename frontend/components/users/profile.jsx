@@ -3,6 +3,7 @@ import React from 'react';
 import { fetchUser } from '../../actions/user_actions';
 import IdentitySection from './identity_section';
 import AboutSection from './about_section';
+import WorkSection from './work_section';
 
 class Home extends React.Component {
     constructor(props){
@@ -23,6 +24,7 @@ class Home extends React.Component {
 
         let idSection;
         let aboutSection;
+        let workSection;
         if (this.props.users[this.props.userId]){
             
             idSection = <IdentitySection user={this.props.users[this.props.userId]} 
@@ -32,10 +34,13 @@ class Home extends React.Component {
             aboutSection = <AboutSection user={this.props.users[this.props.userId]}
                                     currentUser={this.props.currentUser} 
                                     ownProfile={this.props.currentUser.id == this.props.userId} /> 
+            workSection = <WorkSection user={this.props.users[this.props.userId]}
+                                    currentUser={this.props.currentUser} 
+                                    ownProfile={this.props.currentUser.id == this.props.userId} /> 
         }else{
             idSection = null;
             aboutSection = null;
-
+            workSection = null;
         }
         
         return(
@@ -45,7 +50,7 @@ class Home extends React.Component {
             <div className="profile-base">
                 {idSection}
                 {aboutSection}
-                
+                {workSection}
             </div>
         )
 
