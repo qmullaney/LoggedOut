@@ -5,6 +5,8 @@ import { openModal } from '../../actions/modal_actions';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import EditDeleteDropdown from './edit_delete_container'
 
+import { NavLink} from 'react-router-dom';
+
 function ShowPost({ post, currentUser }) {
     let image;
     if (post.photo_url){
@@ -16,9 +18,9 @@ function ShowPost({ post, currentUser }) {
     let profileImg;
 
         if (post.author_pic){
-            profileImg = <i className="pfp" > <img  src={post.author_pic} alt="profile image" /></i>
+            profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <img  src={post.author_pic} alt="profile image" /></NavLink>
         }else{
-            profileImg = <i className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </i>
+            profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
         }
 
     return (

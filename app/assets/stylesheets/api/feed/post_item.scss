@@ -98,13 +98,19 @@
 
                 border-radius: 50%;
             }
-
+            text-decoration: none;
             .empty-profile{
                 
                 border: 2px solid white;
                 border-radius: 50%;
                 height: 60px;
                 width: 60px;
+
+                text-decoration: none;
+                fill: black;
+                &:visited{
+                    color: black;
+                }
     
                 
                 margin-left: auto;
