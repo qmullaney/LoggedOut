@@ -77,7 +77,7 @@ class ProfileDropdown extends React.Component{
     }
 
     render(){
-        
+        console.log(this.props.currentUser);
         
         const profImg = <IoPersonCircleOutline className="prof-img"/>
         // onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur}

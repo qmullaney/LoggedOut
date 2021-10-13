@@ -10,4 +10,5 @@ json.company user.company
 json.position user.position
 json.about user.about
 json.education user.education
+json.edu_about user.edu_about
 json.profile_url user.photo.url

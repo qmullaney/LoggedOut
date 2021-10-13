@@ -19,7 +19,7 @@ class EduSection extends React.Component {
         let edit
         if (ownProfile){
             edit = 
-            <div className="edit-pencil-circle"><BsPencil onClick={() => openModal("work", currentUser)} className="edit-pencil" /> </div>
+            <div className="edit-pencil-circle"><BsPencil onClick={() => openModal("edu", currentUser)} className="edit-pencil" /> </div>
         }else{
             edit = null;
         }
@@ -30,7 +30,7 @@ class EduSection extends React.Component {
                 
                 <h1>Education</h1>
                 <h2>{user.education}</h2>
-                <p>{user.edu_about}</p>
+                <p>{user.edu_about || ""}</p>
             </div>
         )
     }

@@ -6,6 +6,7 @@ import ProfilePicForm from '../users/profile_pic_form';
 import IntroForm from '../users/intro_form';
 import AboutForm from '../users/about_form';
 import WorkForm from '../users/work_form';
+import EduForm from '../users/edu_form';
 
 class Modal extends React.Component {
     constructor(props){
@@ -28,6 +29,8 @@ class Modal extends React.Component {
             component = <AboutForm user={this.props.toEdit} />
         }else if( this.props.modal == 'work'){
             component = <WorkForm user={this.props.toEdit} />
+        }else if( this.props.modal == 'edu'){
+            component = <EduForm user={this.props.toEdit} />
         }else{
             return null;
         } 
