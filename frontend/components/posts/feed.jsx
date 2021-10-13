@@ -34,7 +34,7 @@ class Feed extends React.Component {
                     </div>
                 </div>
                 <div className="middle-feed">
-                <CreatePost />
+                <CreatePost currentUser={this.props.currentUser} />
                 <PostIndex />
                 </div>
             </div>

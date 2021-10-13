@@ -77,7 +77,6 @@ class ProfileDropdown extends React.Component{
     }
 
     render(){
-        console.log(this.props.currentUser);
         
         let profileImg;
 

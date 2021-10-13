@@ -29,8 +29,7 @@ function ShowPost({ post, currentUser }) {
                 {profileImg}
                 <div className="name-title-recency" >
                     <h3>{post.name}</h3>
-                    <h4>Certified Tax Evader</h4>
-                    <h5>Log time ago</h5>
+                    <h4>{post.author_headline}</h4>
                 </div>
                 
             </div>

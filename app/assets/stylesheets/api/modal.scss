@@ -58,11 +58,31 @@
         
                 padding-bottom: 20px;
         
-                .profile{
-                    height: 50px;
-                    width: 50px;
-                    border-radius: 50%;
-                    background: red;
+                .pfp{
+           
+
+                    img{
+                        margin-top: 5px;
+                        height: 60px;
+                        width: 60px;
+        
+                        border-radius: 50%;
+                    }
+        
+                    .empty-profile{
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        height: 60px;
+                        width: 60px;
+            
+                        
+                        margin-left: auto;
+                        margin-right: auto;
+                        left: 0;
+                        right: 0;
+            
+                        background-color: lightgrey;
+                    }
                 }
                 .name-title-recency{
                     height: 50px;

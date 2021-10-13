@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillPicture } from "react-icons/ai";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 class PostForm extends React.Component {
     constructor(props){
@@ -91,6 +92,14 @@ class PostForm extends React.Component {
             invalid = "invalid";
         }
 
+        let profileImg;
+
+        if (this.props.currentUser.profile_url){
+            profileImg = <i className="pfp" > <img  src={this.props.currentUser.profile_url} alt="profile image" /></i>
+        }else{
+            profileImg = <i className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </i>
+        }
+
 
         return (
            
@@ -99,11 +108,10 @@ class PostForm extends React.Component {
                 <hr />
 
                 <div className="post-user-header">
-                    <i className="profile"></i>
+                    {profileImg}
                     <div className="name-title-recency" >
                         <h3>{this.props.currentUser.name}</h3>
-                        <h4>Certified Tax Evader</h4>
-                        <h5>Log time ago</h5>
+                        <h4>{this.props.currentUser.headline}</h4>
                     </div>
                 
                 </div>
