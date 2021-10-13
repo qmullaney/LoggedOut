@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { openModal } from '../../actions/modal_actions';
+import { IoPersonCircleOutline } from "react-icons/io5";
 import EditDeleteDropdown from './edit_delete_container'
 
 function ShowPost({ post, currentUser }) {
@@ -12,13 +13,20 @@ function ShowPost({ post, currentUser }) {
         image = null;
     }
 
-   
+    let profileImg;
+
+        if (post.author_pic){
+            profileImg = <i className="pfp" > <img  src={post.author_pic} alt="profile image" /></i>
+        }else{
+            profileImg = <i className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </i>
+        }
+
     return (
         <div className="post section">
           
             <EditDeleteDropdown currentUser={currentUser} post={post} key={post.id}  />
             <div className="post-user-header">
-                <i className="profile"></i>
+                {profileImg}
                 <div className="name-title-recency" >
                     <h3>{post.name}</h3>
                     <h4>Certified Tax Evader</h4>

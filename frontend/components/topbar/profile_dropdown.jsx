@@ -79,14 +79,20 @@ class ProfileDropdown extends React.Component{
     render(){
         console.log(this.props.currentUser);
         
-        const profImg = <IoPersonCircleOutline className="prof-img"/>
+        let profileImg;
+
+        if (this.props.currentUser.profile_url){
+            profileImg = <i className="pfp" > <img  src={this.props.currentUser.profile_url} alt="profile image" /></i>
+        }else{
+            profileImg = <i className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </i>
+        }
         // onBlur={this.whenFocusOrBlur} onFocus={this.whenFocusOrBlur}
         
         return (
         
             <div  onClick={this.profileClick} className="dd-button"   >
                 <div  className="profile"  >
-                    <i className="profile-icon"></i>
+                    {profileImg}
                     <div>
                         <h4>Me  </h4>
                         <IoMdArrowDropdown className="downarrow"/>
@@ -98,11 +104,11 @@ class ProfileDropdown extends React.Component{
                     className={this.state.show ? "show-dropdown" : "clear" }>
                         
                     <li className="profile-bit">
-                        {profImg}
+                        {profileImg}
                         <div className="name-role">
                           
                             <h2>{this.props.currentUser.name}</h2>
-                            <h3>Certified Dingus</h3>
+                            <h3>{this.props.currentUser.headline}</h3>
                         </div>
                     </li>
                     

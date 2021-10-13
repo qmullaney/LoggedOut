@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AiFillHome, AiFillLinkedin } from "react-icons/ai";
+
 import ProfileDropdown from './profile_dropdown_container'
 
 class Topbar extends React.Component {
