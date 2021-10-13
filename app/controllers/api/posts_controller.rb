@@ -1,6 +1,8 @@
 class Api::PostsController < ApplicationController
     def index
         @posts = Post.all.includes(:user)
+        # Customer.includes(orders: {books: [:supplier, :author]}).find(1)
+        # debugger
         render "api/posts/index"
     end
 

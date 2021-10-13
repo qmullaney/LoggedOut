@@ -49,7 +49,7 @@ class IdentitySection extends React.Component {
                 {edit}
                 <div className="name-pro" >
                     <h1>{user.name} </h1>
-                    <p>{`(${user.pronouns})` || ""} </p>
+                    <p>{user.pronouns ? `(${user.pronouns})` : ""} </p>
                 </div>
                 <h2>{user.headline}</h2>
                 <h3>{user.location || ""}</h3>

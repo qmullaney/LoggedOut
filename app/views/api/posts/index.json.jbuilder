@@ -7,6 +7,7 @@
 
             json.name post.user.name
             json.photo_url post.photo.url
+            json.author_pic post.user.photo.url
 
             json.created_at post.created_at 
             
