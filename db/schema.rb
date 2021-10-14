@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_141133) do
+ActiveRecord::Schema.define(version: 2021_10_13_211942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_10_12_141133) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "connections", force: :cascade do |t|
+    t.integer "connector", null: false
+    t.integer "connectee", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["connectee"], name: "index_connections_on_connectee"
+    t.index ["connector"], name: "index_connections_on_connector"
   end
 
   create_table "posts", force: :cascade do |t|
