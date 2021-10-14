@@ -12,5 +12,15 @@ class Connection < ApplicationRecord
         foreign_key: :connectee,
         class_name: :User 
 
-   
+    
+    def self.connections(user)
+        connectors = user.connectors
+        connectees = user.connectees.map{ |usr| usr.id }.sort
+
+        connectors.select do |usr|
+            connectees.bsearch { |i| i == usr.id } != nil 
+        end
+
+        return connectors
+    end
 end
