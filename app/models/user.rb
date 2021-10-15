@@ -10,6 +10,26 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Post 
 
+    has_many :connectors_ids,
+        primary_key: :id,
+        foreign_key: :connectee,
+        class_name: :Connection
+
+    has_many :connectees_ids,
+        primary_key: :id,
+        foreign_key: :connector,
+        class_name: :Connection
+
+    has_many :connectors,
+        through: :connectors_ids,
+        source: :connector
+
+    has_many :connectees,
+        through: :connectees_ids,
+        source: :connectee
+
+
+
     has_one_attached :photo
 
     def self.find_by_credentials(email, password)

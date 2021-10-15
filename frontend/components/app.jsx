@@ -15,7 +15,7 @@ import topbarContainer from './topbar/topbar_container';
 import feedContainer from './posts/feed_container';
 import Profile from './users/profile';
 import Modal from './modal/modal-container';
-
+import ConnectionsPage from './connections/connections_container';
 
 const App = () => (
     <div className="app">
@@ -24,13 +24,15 @@ const App = () => (
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
             <Route path="/user" component={topbarContainer}/>
+            <Route path="/connections" component={topbarContainer}/>
 
         </header>
-        <Route path="/user/:id" component={Profile}/>
+        <ProtectedRoute path="/user/:id" component={Profile}/>
         <ProtectedRoute exact path="/feed" component={feedContainer}/>
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>
         <AuthRoute exact path="/" component={loginFormContainer}/>
+        <ProtectedRoute path="/connections/:id" component={ConnectionsPage} />
     </div>
 )
 
