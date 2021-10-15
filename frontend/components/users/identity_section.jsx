@@ -3,6 +3,7 @@ import React from 'react';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsPencil } from "react-icons/bs";
 import { openModal } from '../../actions/modal_actions';
+import { NavLink } from 'react-router-dom';
 
 class IdentitySection extends React.Component {
     constructor(props){
@@ -53,7 +54,7 @@ class IdentitySection extends React.Component {
                 </div>
                 <h2>{user.headline}</h2>
                 <h3>{user.location || ""}</h3>
-
+                <NavLink to={`/connections/${user.id}`} > Click</NavLink>
             </div>
         )
     }

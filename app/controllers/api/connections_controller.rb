@@ -1,8 +1,25 @@
-class API::ConnectionsController < ApplicationController
-    def index
+class Api::ConnectionsController < ApplicationController
+    def show
         user = User.find(params[:id])
-        @connctions = Connection.connections(user)
+        @connections = Connection.connections(user) || []
+        
+        render 'api/connections/show'
+    end
 
-        render 'api/connections/index'
+    def create
+        one = User.find(params[:connector])
+        two = User.find(params[:connectee])
+
+        @connection = Connection.create(connector: one, connectee: two)
+
+    end
+
+    def destroy 
+        one = User.find(params[:connector])
+        two = User.find(params[:connectee])
+
+        connection = Connection.find_by(connector: one, connectee: two)
+
+        connection.destroy
     end
 end
