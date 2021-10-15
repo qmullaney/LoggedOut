@@ -1,9 +1,16 @@
 class Api::ConnectionsController < ApplicationController
     def show
         user = User.find(params[:id])
-        @connections = Connection.connections(user) || []
         
-        render 'api/connections/show'
+        if params[:toDo] == "connections"
+            @connections = Connection.connections(user) || []
+            
+            render 'api/connections/show'
+        elsif params[:toDo] == "connectees"
+            @connections = Connection.no_reconnectors(user) || []
+
+            render 'api/connections/show'
+        end
     end
 
     def create

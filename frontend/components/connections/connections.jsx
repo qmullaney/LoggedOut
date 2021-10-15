@@ -15,7 +15,7 @@ class ConnectionsPage extends React.Component{
         $.ajax({
             method: 'GET',
             url: `api/connections/${this.props.match.params.id}`,
-            data: "connections"
+            data: {toDo: "connections"}
         }).then((conns) => {this.setState({
             connections: conns
         })})
