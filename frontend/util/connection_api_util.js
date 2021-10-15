@@ -4,7 +4,7 @@ export const createConnection = (connector_id, connectee_id) => (
         url: 'api/connections',
         data: { connector: connector_id, connectee: connectee_id }
     })
-)
+);
 
 export const removeConnection = (connector_id, connectee_id) => (
     $.ajax({
@@ -12,4 +12,12 @@ export const removeConnection = (connector_id, connectee_id) => (
         url: 'api/connections',
         data: { connector: connector_id, connectee: connectee_id }
     })
-)
+);
+
+export const getNoConnections = id => (
+    $.ajax({
+        method: 'GET',
+        url: `api/connections${id}`,
+        data: { toDo: 'connectees' }
+    })
+);
