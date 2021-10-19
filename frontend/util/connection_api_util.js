@@ -17,7 +17,7 @@ export const removeConnection = (connector_id, connectee_id) => (
 export const getNoConnections = id => (
     $.ajax({
         method: 'GET',
-        url: `api/connections${id}`,
+        url: `api/connections/${id}`,
         data: { toDo: 'connectees' }
     })
 );

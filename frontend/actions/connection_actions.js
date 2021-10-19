@@ -7,6 +7,6 @@ const receive_connectees = connectees => ({
     connectees
 });
 
-export const fetchConnectees = id = dispatch => (
+export const fetchConnectees = id => dispatch => (
     APIUtil.getNoConnections(id).then(peeps => dispatch(receive_connectees(peeps)))
 );

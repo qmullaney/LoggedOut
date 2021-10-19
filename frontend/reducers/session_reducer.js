@@ -10,7 +10,7 @@ const sessionReducer = (state = { id: null, connectees: {}}, action ) =>{
         case LOGOUT_CURRENT_USER:
             return { id: null, connectees: {} };
         case RECEIVE_CONNECTEES:
-            return { id: state.id, connectees: connectees }
+            return { id: state.id, connectees: action.connectees }
         default:
             return state;
     }

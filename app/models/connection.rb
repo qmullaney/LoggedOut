@@ -29,9 +29,9 @@ class Connection < ApplicationRecord
         connectees = user.connectees
 
         connectees.select do |usr| 
-            connections.bsearch { |i| i == usr.id } == nil
+            connections.bsearch do |e| 
+            e == usr.id 
+            end == nil
         end
-
-        return connectees
     end
 end

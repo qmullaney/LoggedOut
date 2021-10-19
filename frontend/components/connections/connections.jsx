@@ -8,6 +8,7 @@ class ConnectionsPage extends React.Component{
         this.state ={
             connections: ""
         }
+        
         //or try this.connections in a state
     }
 
@@ -19,10 +20,12 @@ class ConnectionsPage extends React.Component{
         }).then((conns) => {this.setState({
             connections: conns
         })})
+
+        this.props.fetchConnectees(this.props.match.params.id);
     }
 
     render(){
-        let people;
+        let people = "";
         if (this.state.connections){
             people = Object.keys(this.state.connections).map(id => {
                 return(
@@ -34,7 +37,7 @@ class ConnectionsPage extends React.Component{
         }
         return (
             <div className="connections">
-                {people}
+                {people.length !== 0 ? people : <h1>You don’t have any connections yet.</h1> }
             </div>
         )
     }
