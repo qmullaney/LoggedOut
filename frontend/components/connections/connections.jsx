@@ -21,7 +21,8 @@ class ConnectionsPage extends React.Component{
             connections: conns
         })})
 
-        this.props.fetchConnectees(this.props.match.params.id);
+        this.props.fetchConnectees(this.props.currentUser.id);
+        this.props.fetchUsrConnections(this.props.currentUser.id);
     }
 
     render(){
@@ -30,14 +31,25 @@ class ConnectionsPage extends React.Component{
             people = Object.keys(this.state.connections).map(id => {
                 return(
                     <li key={id} >
-                        <ConnectionsItem user={this.state.connections[id]} />
+                        <ConnectionsItem usr_connections={this.props.usr_connections} currentUser={this.props.currentUser} connections={this.state.connections} user={this.state.connections[id]} no_returned_follows={this.props.no_returned_follows} />
                     </li>
                 )
             })
         }
+        //this  works so do not remove
+        if (!this.props.usr_connections || !this.props.no_returned_follows){
+            return null;
+        }
         return (
-            <div className="connections">
-                {people.length !== 0 ? people : <h1>You don’t have any connections yet.</h1> }
+            <div className="connections-container">
+                <div className='space'> </div>
+                <div className="conns">
+                    <h3>{people.length == 1 ? `${people.length} result` : `${people.length} results` }</h3>
+                    <ul className="connections">
+                        {people.length !== 0 ? people : <h1>No connections yet.</h1> }
+                    </ul>
+                </div>
+                <div className='space'></div>
             </div>
         )
     }

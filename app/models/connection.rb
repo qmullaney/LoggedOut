@@ -17,21 +17,13 @@ class Connection < ApplicationRecord
         connectors = user.connectors
         connectees = user.connectees.map{ |usr| usr.id }.sort
 
-        connectors.select do |usr|
-            connectees.bsearch { |i| i == usr.id } != nil 
-        end
-
-        return connectors
+        connectors.select { |usr| connectees.include?(usr.id) }
     end
 
     def self.no_reconnectors(user)
         connections = Connection.connections(user).map{ |usr| usr.id }.sort
         connectees = user.connectees
 
-        connectees.select do |usr| 
-            connections.bsearch do |e| 
-            e == usr.id 
-            end == nil
-        end
+        connectees.select { |usr| !connections.include?(usr.id) }
     end
 end

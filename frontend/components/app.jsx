@@ -32,7 +32,8 @@ const App = () => (
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>
         <AuthRoute exact path="/" component={loginFormContainer}/>
-        <ProtectedRoute path="/connections/:id" component={ConnectionsPage} />
+        <ProtectedRoute exact path="/connections/:id"  component={(props) =>
+            <ConnectionsPage {...props} key={window.location.pathname} />} />
     </div>
 )
 

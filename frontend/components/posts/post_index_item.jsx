@@ -17,11 +17,11 @@ function ShowPost({ post, currentUser }) {
 
     let profileImg;
 
-        if (post.author_pic){
-            profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <img  src={post.author_pic} alt="profile image" /></NavLink>
-        }else{
-            profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
-        }
+    if (post.author_pic){
+        profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <img  src={post.author_pic} alt="profile image" /></NavLink>
+    }else{
+        profileImg = <NavLink to={`/user/${post.author_id}`} className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
+    }
 
     return (
         <div className="post section">

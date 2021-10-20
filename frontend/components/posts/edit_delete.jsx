@@ -25,7 +25,6 @@ class EditDeleteDropdown extends React.Component{
         let path = e.path || e.composedPath();
         let classPath = path.map(el => ( el.className));
 
-        // debugger
         if(classPath.includes(this.props.post.id.toString())){
             this.setState({
                 show: opposite
