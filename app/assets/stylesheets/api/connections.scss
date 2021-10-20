@@ -1,0 +1,171 @@
+.connections-container{
+    display: flex;
+    background-color: rgb(226, 226, 218);
+    min-height: 92vh;
+
+    font-family: 'Open Sans', sans-serif;
+    .conns{
+        align-self: flex-start;
+        flex-grow: 2;
+
+        h3{
+            color: rgb(98, 98, 98);
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    }
+    .connections{
+        
+        background-color: white;
+        border-radius: 7px;
+        border: 1px solid rgb(199, 199, 199);
+        padding: 10px;
+        padding-top: 5px;
+
+        margin-top: 10px;
+        li:last-child{
+            hr{
+                display: none;
+            }
+        }
+        
+        .connection-item{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 10px;
+            hr{
+                position: absolute;
+                bottom: 0px;
+                right: -10px;
+                width: 94%;
+                border: none;
+                border-bottom: 1px solid rgb(173, 173, 173);
+                margin: 0px;
+            }
+            .left{
+                display: flex;
+
+                .name-about{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 10px;
+                    padding-bottom: 10px;
+                    h1{
+                        font-weight: bold;
+                        margin-bottom: 5px;
+
+                    }
+
+                    h2{
+                        color: rgb(85, 85, 85);
+                        font-size: 15px;
+                    }
+
+                    h3{
+                        color: grey;
+                        font-size: 13px;
+                    }
+                    
+                }
+            }
+
+
+            .conn-button{
+                align-self: flex-start;
+                
+            }
+
+            .Pending{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                height: 30px;
+                width: 90px;
+                border-radius: 24px;
+                border: 1px solid rgb(49, 49, 49);
+                grid-column: 4/4; 
+                color:rgb(44, 44, 44);
+                text-decoration: none;
+                text-align: center;
+                background-color: rgb(161, 161, 161);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+               
+                cursor: not-allowed;
+            }
+            .hide{
+                visibility: hidden;
+            }
+
+            .Connect, .Disconnect {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                height: 30px;
+                width: 90px;
+                border-radius: 24px;
+                border: 1px solid rgb(10, 100, 200);
+                grid-column: 4/4; 
+                color:rgb(10, 100, 200);
+                text-decoration: none;
+                text-align: center;
+                background-color: white;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+               
+                cursor: pointer;
+
+                transition-duration: .1s;
+
+                &:hover {
+                    background: rgb(238, 250, 253);
+                    border: 2px solid rgb(10, 100, 200);
+                }
+            }
+            .Disconnect{
+                width: 110px;
+            }
+            
+            .pfp{
+                img{
+                    margin-top: 5px;
+                    height: 40px;
+                    width: 40px;
+                    
+                    border-radius: 50%;
+                }
+                text-decoration: none;
+                .empty-profile{
+                    
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    
+                    text-decoration: none;
+                    fill: black;
+                    &:visited{
+                        color: black;
+                    }
+                    
+                    
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    
+                    background-color: lightgrey;
+                }
+            }
+        }
+    }
+    .space{
+        flex-grow: 1;
+    }
+}
