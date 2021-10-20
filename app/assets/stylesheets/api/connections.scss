@@ -72,65 +72,6 @@
             }
 
 
-            .conn-button{
-                align-self: flex-start;
-                
-            }
-
-            .Pending{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
-                height: 30px;
-                width: 90px;
-                border-radius: 24px;
-                border: 1px solid rgb(49, 49, 49);
-                grid-column: 4/4; 
-                color:rgb(44, 44, 44);
-                text-decoration: none;
-                text-align: center;
-                background-color: rgb(161, 161, 161);
-                font-family: 'Open Sans', sans-serif;
-                font-size: 16px;
-                font-weight: bold;
-               
-                cursor: not-allowed;
-            }
-            .hide{
-                visibility: hidden;
-            }
-
-            .Connect, .Disconnect {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
-                height: 30px;
-                width: 90px;
-                border-radius: 24px;
-                border: 1px solid rgb(10, 100, 200);
-                grid-column: 4/4; 
-                color:rgb(10, 100, 200);
-                text-decoration: none;
-                text-align: center;
-                background-color: white;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 16px;
-                font-weight: bold;
-               
-                cursor: pointer;
-
-                transition-duration: .1s;
-
-                &:hover {
-                    background: rgb(238, 250, 253);
-                    border: 2px solid rgb(10, 100, 200);
-                }
-            }
-            .Disconnect{
-                width: 110px;
-            }
             
             .pfp{
                 img{
@@ -167,5 +108,83 @@
     }
     .space{
         flex-grow: 1;
+    }
+}
+
+.conn-button{
+    align-self: flex-start;
+    
+}
+
+.Pending{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 30px;
+    width: 90px;
+    border-radius: 24px;
+    border: 1px solid rgb(49, 49, 49);
+    grid-column: 4/4; 
+    color:rgb(44, 44, 44);
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(161, 161, 161);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+   
+    cursor: not-allowed;
+}
+.hide{
+    visibility: hidden;
+}
+
+.Connect, .Disconnect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 30px;
+    width: 90px;
+    border-radius: 24px;
+    border: 1px solid rgb(10, 100, 200);
+    grid-column: 4/4; 
+    color:rgb(10, 100, 200);
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+   
+    cursor: pointer;
+
+    transition-duration: .1s;
+
+    &:hover {
+        background: rgb(238, 250, 253);
+        border: 2px solid rgb(10, 100, 200);
+    }
+}
+.Disconnect{
+    width: 110px;
+}
+
+.usr-cnxn{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cnxns-button{
+    margin: 10px;
+    margin-left: 23px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(10, 100, 200);
+
+    &:hover{
+        text-decoration: underline;
     }
 }

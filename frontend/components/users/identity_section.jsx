@@ -4,11 +4,56 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsPencil } from "react-icons/bs";
 import { openModal } from '../../actions/modal_actions';
 import { NavLink } from 'react-router-dom';
+import * as Actions from '../../util/connection_api_util';
+import { fetchConnectees, fetchUsrConnections } from '../../actions/connection_actions';
+
 
 class IdentitySection extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            connectionStatus: "Connect"
+        }
+        this.handleConnect = this.handleConnect.bind(this);
+    }
 
+    componentDidMount(){
+
+        this.props.fetchConnectees(this.props.currentUser.id).then(() => 
+            this.props.fetchUsrConnections(this.props.currentUser.id)
+        ).then(() => {
+            if (this.props.no_returned_follows && this.props.no_returned_follows[this.props.user.id]){
+                this.setState({
+                    connectionStatus: "Pending"
+                })
+            }else if (this.props.usr_connections && this.props.usr_connections[this.props.user.id]){
+                this.setState({
+                    connectionStatus: 'Disconnect'
+                })
+            }else{
+                this.setState({
+                    conenctionStatus: 'Connect'
+                })
+            }
+        })
+    }
+
+    handleConnect(e){
+        e.preventDefault();
+
+        if(this.state.connectionStatus === 'Connect'){
+            Actions.createConnection(this.props.currentUser.id, this.props.user.id).then(() => 
+                this.setState({
+                    connectionStatus: "Pending"
+                })
+            )
+        }else if(this.state.connectionStatus === 'Disconnect'){
+            Actions.removeConnection(this.props.currentUser.id, this.props.user.id).then(() => 
+                this.setState({
+                    connectionStatus: "Connect"
+                })
+            )
+        }
     }
 
 
@@ -32,6 +77,8 @@ class IdentitySection extends React.Component {
         }
 
 
+
+
         let edit
         if (ownProfile){
             edit = 
@@ -40,6 +87,7 @@ class IdentitySection extends React.Component {
             edit = null;
         }
 
+        
 
 
         return (
@@ -54,18 +102,26 @@ class IdentitySection extends React.Component {
                 </div>
                 <h2>{user.headline}</h2>
                 <h3>{user.location || ""}</h3>
-                <NavLink to={`/connections/${user.id}`} > Click</NavLink>
+                <NavLink className="cnxns-button" to={`/connections/${user.id}`} >Connections</NavLink>
+                {this.props.user.id === this.props.currentUser.id ? "" :
+                    <input type="button" value={ this.state.connectionStatus } className={`usr-cnxn ${this.state.connectionStatus} 
+                conn-button${user.id === currentUser.id ? ' hide' : ""}`} onClick={this.handleConnect} />
+                }
             </div>
         )
     }
 }
 
 const mSTP = state => ({
+    usr_connections: state.session.CUConnections,
+    no_returned_follows: state.session.connectees
 
 })
 
 const mDTP = dispatch => ({
-    openModal: (one, two) => dispatch(openModal(one, two))
+    openModal: (one, two) => dispatch(openModal(one, two)),
+    fetchConnectees: id => dispatch(fetchConnectees(id)),
+    fetchUsrConnections: id => dispatch(fetchUsrConnections(id))
 });
 
 export default connect(mSTP, mDTP)(IdentitySection)
