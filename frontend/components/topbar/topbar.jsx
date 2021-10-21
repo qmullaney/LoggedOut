@@ -1,18 +1,28 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AiFillHome, AiFillLinkedin } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
 
 import ProfileDropdown from './profile_dropdown_container'
 
 class Topbar extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            search_input: ""
+        }
 
         this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleLogout(){
         this.props.logout();
+    }
+
+    handleChange(){
+        return e => this.setState({
+            search_input: e.target.value
+        })
     }
 
     render(){
@@ -30,7 +40,14 @@ class Topbar extends React.Component {
         </nav>;
 
         const signedIn = <nav className="nav">
-            <AiFillLinkedin className="ln"/>
+            <NavLink to="/feed" className="ln"> <AiFillLinkedin className="ln"/></NavLink>
+
+            <div className="search-container" > 
+                <FaSearch className="FaSearch" />
+                <input type="text" value={this.state.search_input} onChange={this.handleChange()} />
+                <label className={this.state.search_input ? "hide" : "" } >Search</label>
+            </div>
+            
             <div className="nav-buttons" >
                 <NavLink activeClassName="selected" className="home" to="/feed">
                     <AiFillHome className="home-icon" />

@@ -10,7 +10,7 @@ header{
     font-family: 'Open Sans', sans-serif;
     display: grid;
 
-    grid-template-columns: 1fr 1fr 4fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr 2fr 2fr;
     background-color: white;
     
 
@@ -25,7 +25,7 @@ header{
 
     .nav-buttons{
         justify-self: end;
-        grid-column: 3;
+        grid-column: 4;
         display: flex;
         justify-content: center;
         .home{
@@ -83,5 +83,61 @@ header{
             }
             
         }
+    }
+}
+
+.search-container{
+    align-self: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(228, 230, 241);
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    box-sizing: content-box;
+    transition-duration: .5s;
+    label{
+        position: absolute;
+        left: 42px;
+        pointer-events: none;
+        color: dimgray;
+    }
+
+    .FaSearch{
+        position: absolute;
+        left: 10px;
+        color: dimgray;
+    }
+
+    input{
+        border: none;
+        position: absolute;
+        left: 40px;
+        background-color: rgb(228, 230, 241);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        width: 150px;
+
+        transition-duration: .5s;
+
+        &:focus{
+            outline: none;
+        }
+
+    }
+    .hide{
+        visibility: hidden;
+    }
+    
+    
+    
+}
+
+.search-container:focus-within{
+    width: 280px;
+    input{
+        width: 230px;
     }
 }
