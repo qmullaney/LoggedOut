@@ -40,8 +40,8 @@ export const createPost = postForm => dispatch => {
     return APIUtil.createPost(postForm).then(post => dispatch(receive_post(post)), error => dispatch(receive_errors(error.responseJSON)))
 };
 
-export const getAllPosts = () => dispatch => (
-    APIUtil.fetchPosts().then(posts => dispatch(receive_posts(posts)))
+export const getAllPosts = userId => dispatch => (
+    APIUtil.fetchPosts(userId).then(posts => dispatch(receive_posts(posts)))
 )
 
 export const clearErrors = () => dispatch => {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const Protected = ({ component: Component, path, logged_in, exact }) => {
+    
     return <Route  
         path={path}
         exact={exact}

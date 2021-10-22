@@ -3,6 +3,8 @@ import Topbar from "./topbar";
 
 import { connect } from 'react-redux';
 import { logout, clearErrors } from '../../actions/session_action';
+import { openSearch } from '../../actions/modal_actions';
+import { fetchFillSearch } from '../../actions/modal_actions'
 
 const mSTP = state => {
     return {
@@ -13,7 +15,9 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
     clearErrors: () => dispatch(clearErrors()),
-    openDropdown: () => dispatch(openDropdown())
+    openDropdown: () => dispatch(openDropdown()),
+    openSearch: () => dispatch(openSearch()),
+    fetchFillSearch: (inputs) => dispatch(fetchFillSearch(inputs))
 })
 
 export default connect(mSTP, mDTP)(Topbar);

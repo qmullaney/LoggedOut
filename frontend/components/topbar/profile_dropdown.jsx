@@ -23,6 +23,8 @@ class ProfileDropdown extends React.Component{
         b.addEventListener('click', this.handleClick);
     }
 
+    
+
     handleClick(e){
         let opposite = !this.state.show;
         let path = e.path || e.composedPath();
