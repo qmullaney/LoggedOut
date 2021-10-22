@@ -1,4 +1,7 @@
 class Api::ConnectionsController < ApplicationController
+    
+    
+    
     def show
         user = User.find(params[:id])
         
@@ -19,6 +22,7 @@ class Api::ConnectionsController < ApplicationController
         @connection = Connection.create(connector: one, connectee: two)
 
     end
+
 
     def destroy 
         one = User.find(params[:connector])

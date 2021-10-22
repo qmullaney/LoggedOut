@@ -10,7 +10,7 @@ header{
     font-family: 'Open Sans', sans-serif;
     display: grid;
 
-    grid-template-columns: 1fr 1fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 50px 3fr 2fr 2fr;
     background-color: white;
     
 
@@ -18,8 +18,9 @@ header{
         justify-self: start;
         grid-column: 2;
         fill: rgb(10, 100, 200);
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
+        align-self: center;
     }
 
 
@@ -98,6 +99,8 @@ header{
     border-radius: 4px;
     box-sizing: content-box;
     transition-duration: .5s;
+
+    grid-column: 3;
     label{
         position: absolute;
         left: 42px;
@@ -136,8 +139,8 @@ header{
 }
 
 .search-container:focus-within{
-    width: 280px;
+    width: 310px;
     input{
-        width: 230px;
+        width: 260px;
     }
 }

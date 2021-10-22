@@ -13,6 +13,15 @@ class Topbar extends React.Component {
         }
 
         this.handleLogout = this.handleLogout.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidUpdate(prevProps){
+        if (prevProps.location.pathname !== this.props.location.pathname){
+            this.setState({
+                search_input: ""
+            })
+        }
     }
 
     handleLogout(){
@@ -20,9 +29,20 @@ class Topbar extends React.Component {
     }
 
     handleChange(){
-        return e => this.setState({
-            search_input: e.target.value
-        })
+        return e => {
+            this.setState({
+                search_input: e.target.value
+            });
+            this.props.fetchFillSearch(e.target.value);
+
+        }
+    }
+    handleClick(e){
+        e.preventDefault();
+
+        this.props.openSearch();
+        this.props.fetchFillSearch(this.state.search_input);
+        
     }
 
     render(){
@@ -42,7 +62,7 @@ class Topbar extends React.Component {
         const signedIn = <nav className="nav">
             <NavLink to="/feed" className="ln"> <AiFillLinkedin className="ln"/></NavLink>
 
-            <div className="search-container" > 
+            <div className="search-container" onClick={this.handleClick} > 
                 <FaSearch className="FaSearch" />
                 <input type="text" value={this.state.search_input} onChange={this.handleChange()} />
                 <label className={this.state.search_input ? "hide" : "" } >Search</label>

@@ -2,7 +2,6 @@ import React from 'react';
 import { closeSearch, openSearch } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SearchItem from './search_item';
-import { FaSearch } from "react-icons/fa";
 
 class SearchModal extends React.Component{
     constructor(props){
@@ -17,7 +16,7 @@ class SearchModal extends React.Component{
 
         const { open, results } = this.props;
 
-        let index;
+        let index = [];
 
         if (open){
             for(const id in results){
@@ -28,11 +27,11 @@ class SearchModal extends React.Component{
         }
 
 
-        if (open){
+        if (open){//switch to open
             return(
                 <div className="search-modal-background" onClick={this.props.closeSearch}>
                     <div className="search-modal" onClick={event => event.stopPropagation()}>
-
+                        {index}
                     </div>
                 </div>
             )

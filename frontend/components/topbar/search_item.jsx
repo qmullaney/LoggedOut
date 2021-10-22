@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
+import { IoPersonCircleOutline } from "react-icons/io5";
+
 function SearchItem({ closeSearch, user }){
 
     let profileImg;
@@ -14,9 +16,12 @@ function SearchItem({ closeSearch, user }){
     }
 
     return(
-        <NavLink className="search-item">
-            <FaSearch />
-            <h1>{user.name} </h1>
+        <NavLink className="search-item" to={`/user/${user.id}`} onClick={() => closeSearch()} >
+            <div>
+
+                <FaSearch className="fasearch" />
+                <h1>{user.name} </h1>
+            </div>
             {profileImg}
         </NavLink>
     )

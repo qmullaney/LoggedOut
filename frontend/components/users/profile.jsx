@@ -9,7 +9,9 @@ import EduSection from './edu_section';
 class Home extends React.Component {
     constructor(props){
         super(props);
-
+        this.state= {
+            rerender: false
+        }
         
     }
 
@@ -19,6 +21,8 @@ class Home extends React.Component {
 
         
     }
+
+    
     
     render (){
         

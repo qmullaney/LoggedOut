@@ -14,4 +14,12 @@ export const editUser = input => (
         contentType: false,
         processData: false
     })
+);
+
+export const fetchFill = input => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/users',
+        data: { input }
+    })
 )

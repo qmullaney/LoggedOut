@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
     session: sessionReducer,
     errors: errorsReducer,
     ui: uiReducer,
-    search: searchReducer
+    searchModal: searchReducer
 })
 
 export default rootReducer;

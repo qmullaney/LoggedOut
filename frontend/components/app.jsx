@@ -16,9 +16,11 @@ import feedContainer from './posts/feed_container';
 import Profile from './users/profile';
 import Modal from './modal/modal-container';
 import ConnectionsPage from './connections/connections_container';
+import SearchModal from './topbar/search_modal';
 
-const App = () => (
-    <div className="app">
+const App = () => {
+    return <div className="app">
+        <SearchModal />
         <Modal/>
         <header>
             <Route exact path="/" component={topbarContainer}/>
@@ -27,7 +29,8 @@ const App = () => (
             <Route path="/connections" component={topbarContainer}/>
 
         </header>
-        <ProtectedRoute path="/user/:id" component={Profile}/>
+        <ProtectedRoute path="/user/:id" component={(props) =>
+            <Profile {...props} key={window.document.URL} />}/>
         <ProtectedRoute exact path="/feed" component={feedContainer}/>
         <AuthRoute exact path="/signup" component={signupFormContainer}/>
         <AuthRoute exact path="/signin" component={signinAltContainer}/>
@@ -35,6 +38,6 @@ const App = () => (
         <ProtectedRoute exact path="/connections/:id"  component={(props) =>
             <ConnectionsPage {...props} key={window.location.pathname} />} />
     </div>
-)
+}
 
 export default App;
