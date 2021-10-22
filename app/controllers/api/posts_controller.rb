@@ -1,8 +1,15 @@
 class Api::PostsController < ApplicationController
     def index
         @posts = Post.all.includes(:user)
-        # Customer.includes(orders: {books: [:supplier, :author]}).find(1)
-       
+
+        user = User.find(params[:id])
+
+        connections = Connection.connections(user).map{ |usr| usr.id }
+
+        @posts = @posts.select do |post| 
+            connections.include?(post.author_id) || post.author_id.to_s == params[:id]
+        end
+
         render "api/posts/index"
     end
 
@@ -10,7 +17,6 @@ class Api::PostsController < ApplicationController
 
         @post = Post.new(post_params)
         if @post.save
-            
           
             render "api/posts/show"
         else

@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
         if input.length == 0
             @results = []
         else
-            @results = User.where("name LIKE ?", "%#{input}%")
+            @results = User.where("lower(name) LIKE ?", "%#{input}%")
         end
         render 'api/users/index'
 
@@ -28,8 +28,6 @@ class Api::UsersController < ApplicationController
 
     def show 
         @user = User.find_by(id: params[:userId])
-        
-        
     end
 
 

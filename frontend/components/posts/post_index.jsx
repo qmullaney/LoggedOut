@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount(){
-        this.props.getPosts();
+        this.props.getPosts(this.props.currentUser.id);
     }
 
     render (){
@@ -44,7 +44,7 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    getPosts: () => dispatch(getAllPosts())
+    getPosts: (userId) => dispatch(getAllPosts(userId))
 })
 
 export default connect(mSTP, mDTP)(PostIndex);
