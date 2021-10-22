@@ -6,7 +6,19 @@ class Post < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User 
 
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :post,
+        class_name: :Like
     
+
+    # def isLiked?(id)
+    #     self.likes.map{ |like| like.liker }.include?(id)
+    # end
+
+    # def likeNum 
+    #     self.likes.length
+    # end
    
     has_one_attached :photo
 end
