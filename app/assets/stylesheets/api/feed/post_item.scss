@@ -148,9 +148,55 @@
     p{
         font-size: 14px;
         padding: 10px;
+        margin-left: 5px;
     }
 
     img{
         width: 100%;
+        margin-bottom: 10px;
     }
+    h2{
+        color: grey;
+        font-size: 10px;
+        margin-bottom: 12px;
+        margin-left: 20px;
+    }
+
+    hr{
+        border: none;
+        color: rgb(211, 211, 211);
+        background-color: rgb(214, 214, 214);
+        margin: 0;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+.likes-comments{
+    display: flex;
+    justify-content: space-evenly;
+    color: grey;
+    width: 100%;
+
+    
+    .thumbs-fill{
+        color: rgb(10, 100, 200);
+    }
+
+    div{
+        color: rgb(77, 77, 77);
+        display: flex;
+        &:hover{
+            background-color: rgb(230, 230, 230);
+        }
+        border-radius: 7px;
+
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    h1{
+        margin-left: 10px;
+    }
+    
 }

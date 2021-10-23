@@ -28,7 +28,10 @@ class User < ApplicationRecord
         through: :connectees_ids,
         source: :connectee
 
-
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :liker,
+        class_name: :Like
 
     has_one_attached :photo
 
