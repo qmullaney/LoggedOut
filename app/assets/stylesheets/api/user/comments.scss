@@ -1,0 +1,87 @@
+.comment-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comment-input{
+    display: flex;
+    width: 100%;
+
+    .pfp{
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+
+        align-self: center;
+
+        img{
+            border-radius: 50%;
+
+        }
+    }
+
+    .empty-profile{
+        height: 50px;
+        width: 50px;
+        fill: black;
+        background-color: rgb(212, 212, 212);
+        align-self: center;
+        border-radius: 50%;
+        margin: 10px;
+    }
+
+    
+
+    .input-container{
+        width: 80%;
+        align-self: center;
+        position: relative;
+        border: 1px solid grey;
+        border-radius: 40px;
+        height: 40px;
+        transition-duration: .1s;
+
+        &:focus-within{
+            border: 2px solid grey;
+
+        }
+        input{
+            width: 90%;
+            border: none;
+            top: 11px;
+            left: 10px;
+            font-size: 15px;
+            color: black;
+            &:focus{
+                outline: none;
+            }
+            position: absolute;
+
+        }
+
+        label{
+            position: absolute;
+            top: 11px;
+            left: 13px;
+            pointer-events: none;
+            z-index: 20;
+        }
+    }
+}
+
+.post-comment{
+    width: 50px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(10, 100, 200);
+    transition-duration: .2s;
+    margin-left: 60px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 20px;
+    &:hover{
+        background-color: rgb(9, 70, 139);
+    }
+}

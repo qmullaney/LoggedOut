@@ -6,6 +6,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import EditDeleteDropdown from './edit_delete_container';
 import { FaRegThumbsUp,  FaThumbsUp } from "react-icons/fa";
 import { BiCommentDetail } from "react-icons/bi";
+import  CommentSection from '../comments/comment_section';
 
 import { NavLink} from 'react-router-dom';
 
@@ -13,9 +14,11 @@ class ShowPost extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            liked: false
+            liked: false,
+            comment: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleComment = this.handleComment.bind(this);
     }
 
     componentDidMount(){
@@ -52,6 +55,14 @@ class ShowPost extends React.Component {
                 liked: true
             });
         }
+    }
+
+    handleComment(e){
+        e.preventDefault();
+
+        this.setState({
+            comment: !this.state.comment
+        })
     }
 
     render(){
@@ -101,11 +112,12 @@ class ShowPost extends React.Component {
                         {icon}
                         <h1>Like</h1>
                     </div>
-                    <div>
+                    <div onClick={this.handleComment}>
                         <BiCommentDetail className="comment-icon" />
                         <h1>Comment</h1>
                     </div>
                 </div>
+                {this.state.comment ? <CommentSection post={post} currentUser={currentUser} /> : ""}
             </div>
         )
     }
