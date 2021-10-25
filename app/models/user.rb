@@ -33,6 +33,11 @@ class User < ApplicationRecord
         foreign_key: :liker,
         class_name: :Like
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :commenter_id,
+        class_name: :Comment
+
     has_one_attached :photo
 
     def self.find_by_credentials(email, password)
