@@ -11,6 +11,10 @@ class Post < ApplicationRecord
         foreign_key: :post,
         class_name: :Like
     
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :post_id,
+        class_name: :Comment
 
     # def isLiked?(id)
     #     self.likes.map{ |like| like.liker }.include?(id)
