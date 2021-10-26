@@ -34,6 +34,11 @@ class CommentSection extends React.Component{
             url: 'api/comments',
             data: { post_id: this.props.post.id, commenter_id: this.props.currentUser.id, body: this.state.input }
         }).then( comment => this.setState({ comments: Object.assign({}, this.state.comments, { [comment.id]: comment }), input: ""}))
+        let b = document.querySelector('textarea');
+        
+
+        b.setAttribute('style', 'height: auto' )
+        b.setAttribute('style', 'height: ' + 20 + 'px' )
 
     }
 

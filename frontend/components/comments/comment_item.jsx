@@ -23,9 +23,12 @@ class Comment extends React.Component{
         return (
             <div className="comment">
                 {profileImg}
-                <h1>{comment.commenter_name}</h1>
-                <h2>{comment.commenter_pronouns}</h2>
-                <p>{comment.body}</p>
+                <div>
+
+                    <h1>{comment.commenter_name}</h1>
+                    <h2>{comment.commenter_pronouns}</h2>
+                    <p>{comment.body}</p>
+                </div>
             </div>
         )
     }

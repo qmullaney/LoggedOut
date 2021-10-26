@@ -105,7 +105,7 @@ class ShowPost extends React.Component {
                 </div>
                 <p>{post.body}</p>
                 {image}
-                <h2>{post.likes.length} likes * <span> {} comments </span></h2>
+                <h2>{post.likes.length} likes *  <span onClick={this.handleComment} > {post.commentNum} comments </span></h2>
                 <hr />
                 <div className="likes-comments">
                     <div onClick={this.handleClick}>

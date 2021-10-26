@@ -90,3 +90,51 @@
     }
 }
 
+.comment{
+    display: flex;
+    margin-bottom: 20px;
+    margin: 10px;
+
+    .pfp img{
+        height: 30px;
+        width: 30px;
+
+        align-self: center;
+
+       
+        border-radius: 50%;
+
+        
+    }
+
+    .empty-profile{
+        height: 40px;
+        width: 40px;
+        fill: black;
+        background-color: rgb(212, 212, 212);
+        align-self: center;
+        border-radius: 50%;
+        margin: 10px;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        background-color: rgb(228, 227, 227);
+        padding: 10px;
+        border-radius: 7px;
+        margin-left: 10px;
+        padding-right: 30px;
+        max-width: 100%;
+
+    }
+
+    h1{
+        font-weight: bold;
+    }
+    h2{
+        color: grey;
+
+    }
+    
+}

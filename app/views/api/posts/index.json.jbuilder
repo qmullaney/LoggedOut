@@ -11,6 +11,7 @@
             json.author_headline post.user.headline 
 
             json.likes post.likes.map{ |like| like.liker }
+            json.commentNum post.comments.size
 
             json.created_at post.created_at 
             
