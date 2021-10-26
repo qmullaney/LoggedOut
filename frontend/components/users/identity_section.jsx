@@ -98,10 +98,10 @@ class IdentitySection extends React.Component {
                 {edit}
                 <div className="name-pro" >
                     <h1>{user.name} </h1>
-                    <p>{user.pronouns ? `(${user.pronouns})` : ""} </p>
+                    <p>{user.pronouns === "null" ? "" : `(${user.pronouns})` } </p>
                 </div>
                 <h2>{user.headline}</h2>
-                <h3>{user.location || ""}</h3>
+                <h3>{user.location === "null" ? "" : user.location }</h3>
                 <NavLink className="cnxns-button" to={`/connections/${user.id}`} >Connections</NavLink>
                 {this.props.user.id === this.props.currentUser.id ? "" :
                     <input type="button" value={ this.state.connectionStatus } className={`usr-cnxn ${this.state.connectionStatus} 

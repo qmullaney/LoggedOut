@@ -54,7 +54,7 @@ class EduForm extends React.Component{
 
                 <label >Description</label>
                 <textarea className="textarea" placeholder="" 
-                           value={this.state.edu_about || ""} 
+                           value={this.state.edu_about === "null" ? "" : this.state.edu_about } 
                            onChange={this.handleChange("edu_about")}>
                 </textarea>
     

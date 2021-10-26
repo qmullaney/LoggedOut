@@ -23,14 +23,13 @@ class EduSection extends React.Component {
         }else{
             edit = null;
         }
-
         return (
             <div className="edu">
                 {edit}
                 
                 <h1>Education</h1>
                 <h2>{user.education}</h2>
-                <p>{user.edu_about || ""}</p>
+                <p>{user.edu_about === "null" ? "" : user.edu_about}</p>
             </div>
         )
     }

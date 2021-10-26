@@ -52,20 +52,20 @@ class IntroForm extends React.Component{
                 <div className="required" >* Indicates required</div>
                 <label htmlFor="fn">First Name *</label>
                 <input type="text" id="fn" name="first_name" value={`${this.state.first_name}`} onChange={this.handleChange("first_name")} />
-                <div className="err" >  {this.state.first_name.length === 0 ? "First name is a required field" : "" } </div>
+                <div className="err" >  {!this.state.first_name ? "First name is a required field" : "" } </div>
                 <label htmlFor="ln">Last Name *</label>
-                <input type="text" id="ln" name="last_name" value={`${this.state.last_name}`} onChange={this.handleChange("last_name")} />
-                <div className="err" >  {this.state.last_name.length === 0 ? "Last name is a required field" : "" } </div>
+                <input type="text" id="ln" name="last_name" value={`${this.state.last_name || ""}`} onChange={this.handleChange("last_name")} />
+                <div className="err" >  {!this.state.last_name ? "Last name is a required field" : "" } </div>
                     
     
                 <label htmlFor="pn">Pronouns</label>
                 <input type="text" id="pn" name="pronouns" value={`${this.state.pronouns || ""}`} onChange={this.handleChange("pronouns")} />
                 <label htmlFor="hl">Headline * </label>
                 <input type="text" id="hl" name="headline" value={`${this.state.headline || ""}`} onChange={this.handleChange("headline")} />
-                <div className="err" >  {this.state.headline.length === 0 ? "Headline is a required field" : "" } </div>
+                <div className="err" >  {!this.state.headline  ? "Headline is a required field" : "" } </div>
                 <label htmlFor="loc">Location</label>
                 <input type="text" id="loc" name="location" value={`${this.state.location || ""}`} onChange={this.handleChange("location")} />
-                <hr />
+                <hr className="hr" />
                 <div className="save">
                     <input type="submit" value="Save"  />
                 </div>
