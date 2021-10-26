@@ -38,31 +38,34 @@
         align-self: center;
         position: relative;
         border: 1px solid grey;
-        border-radius: 40px;
-        height: 40px;
+        border-radius: 30px;
+        min-height: 40px;
         transition-duration: .1s;
+        display: flex;
 
         &:focus-within{
             border: 2px solid grey;
 
         }
-        input{
+        textarea{
             width: 90%;
             border: none;
-            top: 11px;
-            left: 10px;
+            
             font-size: 15px;
+            margin-left: 10px;
+            margin-top: 10px;
+
             color: black;
+            border-radius: 20px;
+            overflow: hidden;
             &:focus{
                 outline: none;
             }
-            position: absolute;
-
         }
 
         label{
             position: absolute;
-            top: 11px;
+            top: 15px;
             left: 13px;
             pointer-events: none;
             z-index: 20;
@@ -79,9 +82,11 @@
     transition-duration: .2s;
     margin-left: 60px;
     margin-bottom: 15px;
+    margin-top: 10px;
     border: none;
     border-radius: 20px;
     &:hover{
         background-color: rgb(9, 70, 139);
     }
 }
+

@@ -15,14 +15,17 @@ class Comment extends React.Component{
         const { comment, currentUser } = this.props;
         let profileImg;
 
-        if (currentUser.profile_url){
-            profileImg = <NavLink to={`/user/${currentUser.id}`} className="pfp" > <img  src={currentUser.profile_url} alt="profile image" /></NavLink>
+        if (comment.commenter_pic){
+            profileImg = <NavLink to={`/user/${comment.commenter_id}`} className="pfp" > <img  src={comment.commenter_pic} alt="profile image" /></NavLink>
         }else{
-            profileImg = <NavLink to={`/user/${currentUser.id}`} className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
+            profileImg = <NavLink to={`/user/${comment.commenter_id}`} className="pfp" > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
         }
         return (
             <div className="comment">
-                <h1>{comment.body}</h1>
+                {profileImg}
+                <h1>{comment.commenter_name}</h1>
+                <h2>{comment.commenter_pronouns}</h2>
+                <p>{comment.body}</p>
             </div>
         )
     }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Comment from './comment_item';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { NavLink} from 'react-router-dom';
+import $ from 'jquery';
 
 class CommentSection extends React.Component{
     constructor(props){
@@ -40,6 +41,11 @@ class CommentSection extends React.Component{
         this.setState({
             input: e.target.value
         })
+        let b = document.querySelector('textarea');
+        
+
+        b.setAttribute('style', 'height: auto' )
+        b.setAttribute('style', 'height: ' + b.scrollHeight + 'px' )
     }
 
     render(){
@@ -61,13 +67,16 @@ class CommentSection extends React.Component{
 
         let postButton = <input type="button" className="post-comment" value="Post" onClick={this.handlePost} />;
 
+                
+        
+
         return (
             <div className="comment-section">
                 <div className='comment-input' >
                     {profileImg}
                     <div className="input-container" >
                         <label >{this.state.input ? "" : "Add a comment..." }</label>
-                        <input type="text" onChange={this.handleChange} value={this.state.input} />
+                        <textarea className="txtarea"  onChange={this.handleChange} value={this.state.input}  ></textarea>
                     </div>
                 </div>
                 {this.state.input ? postButton : "" }

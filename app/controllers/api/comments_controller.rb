@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-
+    protect_from_forgery with: :null_session
     def create
         @comment = Comment.create(commenter_id: params[:commenter_id], post_id: params[:post_id], body: params[:body])
 
