@@ -36,11 +36,13 @@
             position: relative;
 
             .background{
-                background-image: asset-url("LI-Logo.png");
+                // background-image: asset-url("LI-Logo.png");
                 
-                height: 70px;
-                background-size: contain;
-                background-repeat: no-repeat;
+                height: 40px;
+                // background-size: contain;
+                // background-repeat: no-repeat;
+                background-color: rgb(160, 160, 255);
+                border-radius: 7px;
             }
 
             .user-info{

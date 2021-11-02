@@ -38,7 +38,7 @@ class CommentSection extends React.Component{
         
 
         b.setAttribute('style', 'height: auto' )
-        b.setAttribute('style', 'height: ' + 20 + 'px' )
+        b.setAttribute('style', 'height: ' + 15 + 'px' )
 
     }
 

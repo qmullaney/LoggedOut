@@ -15,7 +15,8 @@ class ShowPost extends React.Component {
         super(props)
         this.state = {
             liked: false,
-            comment: false
+            comment: false,
+            likesNum: 0
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleComment = this.handleComment.bind(this);
@@ -24,7 +25,8 @@ class ShowPost extends React.Component {
     componentDidMount(){
         if (this.props.post.likes.includes(this.props.currentUser.id)){
             this.setState({
-                liked: true
+                liked: true,
+                likesNum: this.props.post.likes.length
             })
         }
     }
@@ -41,7 +43,8 @@ class ShowPost extends React.Component {
             });
 
             this.setState({
-                liked: false
+                liked: false,
+                likesNum: this.state.likesNum - 1
             });
         }else{
             $.ajax({
@@ -52,7 +55,8 @@ class ShowPost extends React.Component {
             });
 
             this.setState({
-                liked: true
+                liked: true,
+                likesNum: this.state.likesNum + 1
             });
         }
     }
@@ -105,7 +109,7 @@ class ShowPost extends React.Component {
                 </div>
                 <p>{post.body}</p>
                 {image}
-                <h2>{post.likes.length} likes *  <span onClick={this.handleComment} > {post.commentNum} comments </span></h2>
+                <h2>{this.state.likesNum} likes •  <span onClick={this.handleComment} > {post.commentNum} comments </span></h2>
                 <hr />
                 <div className="likes-comments">
                     <div onClick={this.handleClick}>
