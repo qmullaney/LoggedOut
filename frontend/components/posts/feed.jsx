@@ -3,6 +3,7 @@ import CreatePost from './create_post';
 import PostIndex from './post_index';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { NavLink} from 'react-router-dom';
+import RightFeed from './right_feed';
 
 class Feed extends React.Component {
     constructor(props){
@@ -34,8 +35,11 @@ class Feed extends React.Component {
                     </div>
                 </div>
                 <div className="middle-feed">
-                <CreatePost currentUser={this.props.currentUser} />
-                <PostIndex currentUser={this.props.currentUser} />
+                    <CreatePost currentUser={this.props.currentUser} />
+                    <PostIndex currentUser={this.props.currentUser} />
+                </div>
+                <div className='right-feed'>
+                    <RightFeed currentUser={this.props.currentUser} />
                 </div>
             </div>
         )

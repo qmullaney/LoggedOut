@@ -1,7 +1,7 @@
 
 .feed-main{
     display: grid;
-    grid-template-columns: 25% 40% 1fr;
+    grid-template-columns: 25% 40% 1fr 2%;
     gap: 20px;
 
     width: 100vw;
@@ -19,9 +19,9 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-
-    
-
+    }
+    .right-feed{
+        grid-column: 3/3;
     }
 
     .left-feed{
@@ -41,7 +41,7 @@
                 height: 40px;
                 // background-size: contain;
                 // background-repeat: no-repeat;
-                background-color: rgb(160, 160, 255);
+                background-color: white;
                 border-radius: 7px;
             }
 
@@ -79,7 +79,7 @@
                     }
 
                     h1{
-                        margin-top: 27px;
+                        margin-top: 40px;
                         font-weight: bold;
                         margin-bottom: 10px;
                         
@@ -111,4 +111,12 @@
         }
     }
 
+}
+
+.xtra-space{
+    margin-top: 10px;
+
+    .connections{
+        padding-top: 10px;
+    }
 }
