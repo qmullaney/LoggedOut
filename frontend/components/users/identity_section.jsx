@@ -47,7 +47,7 @@ class IdentitySection extends React.Component {
                     connectionStatus: "Pending"
                 })
             )
-        }else if(this.state.connectionStatus === 'Disconnect'){
+        }else if(this.state.connectionStatus === 'Disconnect' || this.state.connectionStatus === 'Pending'){
             Actions.removeConnection(this.props.currentUser.id, this.props.user.id).then(() => 
                 this.setState({
                     connectionStatus: "Connect"
@@ -89,7 +89,6 @@ class IdentitySection extends React.Component {
 
         
 
-
         return (
             <div className="identity">
                 <img className="default-background" src="https://static-exp1.licdn.com/sc/h/5q92mjc5c51bjlwaj3rs9aa82" alt="default background" />
@@ -98,7 +97,7 @@ class IdentitySection extends React.Component {
                 {edit}
                 <div className="name-pro" >
                     <h1>{user.name} </h1>
-                    <p>{user.pronouns === "null" ? "" : `(${user.pronouns})` } </p>
+                    <p>{user.pronouns === null ? "" : `(${user.pronouns})` } </p>
                 </div>
                 <h2>{user.headline}</h2>
                 <h3>{user.location === "null" ? "" : user.location }</h3>

@@ -26,4 +26,11 @@ class Connection < ApplicationRecord
 
         connectees.select { |usr| !connections.include?(usr.id) }
     end
+
+    def self.connectors(user)
+        connections = Connection.connections(user).map{ |usr| usr.id }.sort
+        connectors = user.connectors
+
+        connectors.select { |usr| !connections.include?(usr.id) }
+    end
 end

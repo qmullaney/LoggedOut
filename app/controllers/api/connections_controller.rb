@@ -8,6 +8,10 @@ class Api::ConnectionsController < ApplicationController
         if params[:toDo] == "connections"
             @connections = Connection.connections(user) || []
             render 'api/connections/show'
+        elsif params[:toDo] == "connectors"
+            @connections = Connection.connectors(user) || []
+            render 'api/connections/show'
+
         elsif params[:toDo] == "connectees"
             @connections = Connection.no_reconnectors(user) || []
 

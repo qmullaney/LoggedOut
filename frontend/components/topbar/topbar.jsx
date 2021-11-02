@@ -49,7 +49,7 @@ class Topbar extends React.Component {
         const signedOut = <nav className="session-nav">
             <div>
 
-            <Link className="home-logo" onClick={this.props.clearErrors} to="/"></Link>
+            <Link className="home-logo" onClick={this.props.clearErrors} to="/">LoggedOut</Link>
         
             <Link className="join-now" onClick={this.props.clearErrors} to="/signup">Join now</Link>
         
@@ -60,7 +60,7 @@ class Topbar extends React.Component {
         </nav>;
 
         const signedIn = <nav className="nav">
-            <NavLink to="/feed" className="ln"> <AiFillLinkedin className="ln"/></NavLink>
+            <NavLink to="/feed" className="ln"> </NavLink>
 
             <div className="search-container" onClick={this.handleClick} > 
                 <FaSearch className="FaSearch" />

@@ -42,7 +42,6 @@
         min-height: 40px;
         transition-duration: .1s;
         display: flex;
-
         &:focus-within{
             border: 2px solid grey;
 
@@ -54,9 +53,8 @@
             font-size: 15px;
             margin-left: 10px;
             margin-top: 10px;
-
             color: black;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
             &:focus{
                 outline: none;
