@@ -34,7 +34,6 @@ class ConnectionsPage extends React.Component{
                 )
             })
         }
-       console.log(this.state.connectors);
         return (
             <div className="connections-container">
                 

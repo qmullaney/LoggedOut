@@ -18,9 +18,15 @@ header{
         justify-self: start;
         grid-column: 2;
         fill: rgb(10, 100, 200);
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         align-self: center;
+        background-image: image-url("out2.png");
+
+        background-size: contain;
+
+        border-radius: 4px;
+
     }
 
 

@@ -13,10 +13,19 @@
 
     .image{
 
-        background-image: image-url("LI-Logo.png");
+        // background-image: image-url("LI-Logo.png");
 
-        background-size: contain;
-        background-repeat: no-repeat;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        
+        font-family: 'Open Sans', sans-serif;
+        font-size: 35px;
+        font-weight: bold;
+        text-decoration: none;
+        fill: rgb(10, 100, 200);
+        &:visited{
+            color: rgb(10, 100, 200);
+        }
         height: 35px;
         width: 120px;
         margin: 30px;

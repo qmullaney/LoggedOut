@@ -73,7 +73,7 @@ class SignupForm extends React.Component {
 
         
         let first = <div className="signup-main">
-                <Link className="image" to="/" onClick={this.props.clearErrors}></Link>
+                <Link className="image" to="/" onClick={this.props.clearErrors}>LoggedOut</Link>
                 <h1>Make the most of your professional life</h1>
                 <form onSubmit={this.handleMoveOn} className="signup-session">
                     <ul className="signup-errors">

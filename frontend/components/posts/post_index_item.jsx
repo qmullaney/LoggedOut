@@ -23,7 +23,7 @@ class ShowPost extends React.Component {
     }
 
     componentDidMount(){
-        if (this.props.post.likes.includes(this.props.currentUser.id)){
+        if ( this.props.post.likes && this.props.post.likes.includes(this.props.currentUser.id)){
             this.setState({
                 liked: true,
                 likesNum: this.props.post.likes.length
@@ -109,7 +109,7 @@ class ShowPost extends React.Component {
                 </div>
                 <p>{post.body}</p>
                 {image}
-                <h2>{this.state.likesNum} likes •  <span onClick={this.handleComment} > {post.commentNum} comments </span></h2>
+                <h2>{this.state.likesNum} likes •  <span onClick={this.handleComment} > {post.commentNum || 0} comments </span></h2>
                 <hr />
                 <div className="likes-comments">
                     <div onClick={this.handleClick}>
