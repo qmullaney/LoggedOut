@@ -1,5 +1,6 @@
 @comments.each do |comment|
     json.set! comment.id do
+        json.id comment.id
         json.body comment.body
         json.post_id comment.post_id 
         json.commenter_id comment.commenter_id

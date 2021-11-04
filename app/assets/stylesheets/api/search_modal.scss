@@ -40,6 +40,13 @@
             &:visited{
                 color: black;
             }
+            &:active{
+                color: black;
+            }
+
+            &:link{
+                color: black;
+            }
             div{
                 display: flex;
             }
