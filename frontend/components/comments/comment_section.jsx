@@ -56,7 +56,7 @@ class CommentSection extends React.Component{
     render(){
         const { currentUser, post } = this.props;
         let comments = [];
-        let order = Object.keys(this.state.comments).sort().reverse();
+        let order = Object.keys(this.state.comments).sort();
         order.forEach(id => {
             comments.push(<Comment key={id} comment={this.state.comments[id]}  currentUser={currentUser} />)
         })
@@ -70,7 +70,7 @@ class CommentSection extends React.Component{
             profileImg = <NavLink to={`/user/${currentUser.id}`}  > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
         }
 
-        let postButton = <input type="button" className="post-comment" value="Post" onClick={this.handlePost} />;
+        let postButton = <input type="button" className="post-comment margin" value="Post" onClick={this.handlePost} />;
 
                 
         

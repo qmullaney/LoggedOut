@@ -35,8 +35,16 @@
             &:hover{
                 background-color: rgb(221, 221, 221);
             }
-
+            fill: black;
+            
             &:visited{
+                color: black;
+            }
+            &:active{
+                color: black;
+            }
+
+            &:link{
                 color: black;
             }
             div{

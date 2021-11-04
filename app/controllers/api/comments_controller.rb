@@ -8,15 +8,14 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        comment = Comment.find_by(commenter_id: params[:commenter_id], post_id: params[:post_id])
+        comment = Comment.find(params[:id])
         comment.destroy
     end
 
     def update
-        @comment = Comment.find_by(commenter_id: params[:commenter_id], post_id: params[:post_id])
+        @comment = Comment.find(params[:id])
 
-        @comment.update(params[:body])
-
+        @comment.update(body: params[:text])
         render 'api/comments/show'
     end
 

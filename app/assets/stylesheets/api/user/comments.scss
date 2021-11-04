@@ -39,7 +39,7 @@
         position: relative;
         border: 1px solid grey;
         border-radius: 30px;
-        min-height: 40px;
+        min-height: 20px;
         transition-duration: .1s;
         display: flex;
         &:focus-within{
@@ -49,6 +49,8 @@
         textarea{
             width: 90%;
             border: none;
+
+            font-family: 'Open Sans', sans-serif;
             
             font-size: 15px;
             margin-left: 10px;
@@ -56,6 +58,7 @@
             color: black;
             border-radius: 12px;
             overflow: hidden;
+            resize: none;
             &:focus{
                 outline: none;
             }
@@ -71,6 +74,10 @@
     }
 }
 
+.margin{
+    margin-left: 50px;
+}
+
 .post-comment{
     width: 50px;
     height: 25px;
@@ -78,13 +85,25 @@
     font-weight: bold;
     background-color: rgb(10, 100, 200);
     transition-duration: .2s;
-    margin-left: 60px;
+    margin-left: 0px;
     margin-bottom: 15px;
     margin-top: 10px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
     &:hover{
         background-color: rgb(9, 70, 139);
+    }
+}
+
+.cancel{
+    margin-left: 20px;
+    
+    background-color: rgb(219, 219, 219);
+    color: grey;
+    width: 70px;
+    &:hover{
+        background-color: rgb(192, 192, 192);
     }
 }
 
@@ -92,7 +111,17 @@
     display: flex;
     margin-bottom: 20px;
     margin: 10px;
+    max-width: 100%;
+    .save-cancel{
+    
+        flex-direction: row;
+        padding: 0px;
+    }
 
+    div{
+        position: relative;
+
+    }
     .pfp img{
         height: 30px;
         width: 30px;
@@ -101,18 +130,28 @@
 
        
         border-radius: 50%;
+    }
 
-        
+    textarea{
+        background-color: rgb(228, 227, 227);
+        border: none;
+        outline: none;
+        height: auto;
+        max-width: 100%;
+        resize: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+
     }
 
     .empty-profile{
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         fill: black;
         background-color: rgb(212, 212, 212);
         align-self: center;
         border-radius: 50%;
-        margin: 10px;
+        // margin: 10px;
     }
     div{
         display: flex;
@@ -124,6 +163,7 @@
         margin-left: 10px;
         padding-right: 30px;
         max-width: 100%;
+        width: 80%;
 
     }
 
@@ -135,4 +175,82 @@
 
     }
     
+}
+
+.comment-dd-button{
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    height: 35px;
+    
+    div{
+        padding: 0px;
+        margin: 0px;
+        cursor: pointer;
+    }
+    .dots-icon{
+        height: 15px;
+        width: 15px;
+        color: rgb(82, 82, 82);
+
+        border-radius: 50%;
+        font-size: 25px;
+    }
+    
+
+    
+    .show-dots{
+        position: absolute;
+        background-color: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 7px;
+
+        z-index: 50;
+        right: -5px;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        
+        box-shadow: 0px 0px 10px 1px lightgrey;
+
+        div{
+            display: flex;
+            flex-direction: row;
+            width: 150px;
+            padding: 10px;
+            background-color: white;
+            cursor: pointer;
+            .pencil{
+                fill: rgb(82, 82, 82);
+                height: 20px;
+                width: 20px;
+            }
+
+            h3{
+                padding-left: 15px;
+                font-weight: bold;
+                font-size: 13px;
+            }
+
+            &:hover{
+                background-color: lightgrey;
+            }
+        }
+
+    }
+
+    .clear{
+        visibility: hidden;
+    }
 }

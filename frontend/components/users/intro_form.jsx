@@ -42,6 +42,14 @@ class IntroForm extends React.Component{
         })
     }
 
+    noNullish(str){
+        if(str === null || str === 'null'){
+            return "";
+        }else{
+            return str;
+        }
+    }
+
     render(){
        
         return (
@@ -59,12 +67,12 @@ class IntroForm extends React.Component{
                     
     
                 <label htmlFor="pn">Pronouns</label>
-                <input type="text" id="pn" name="pronouns" value={`${this.state.pronouns || ""}`} onChange={this.handleChange("pronouns")} />
+                <input type="text" id="pn" name="pronouns" value={`${this.noNullish(this.state.pronouns)}`} onChange={this.handleChange("pronouns")} />
                 <label htmlFor="hl">Headline * </label>
                 <input type="text" id="hl" name="headline" value={`${this.state.headline || ""}`} onChange={this.handleChange("headline")} />
                 <div className="err" >  {!this.state.headline  ? "Headline is a required field" : "" } </div>
                 <label htmlFor="loc">Location</label>
-                <input type="text" id="loc" name="location" value={`${this.state.location || ""}`} onChange={this.handleChange("location")} />
+                <input type="text" id="loc" name="location" value={`${this.noNullish(this.state.location)}`} onChange={this.handleChange("location")} />
                 <hr className="hr" />
                 <div className="save">
                     <input type="submit" value="Save"  />
