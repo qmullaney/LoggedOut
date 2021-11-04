@@ -9,8 +9,8 @@ class EduForm extends React.Component{
         super(props);
         this.state= {
             id: this.props.user.id,
-            education: this.props.user.education,
-            edu_about: this.props.user.edu_about
+            education: this.props.user.education || "",
+            edu_about: this.props.user.edu_about || ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }

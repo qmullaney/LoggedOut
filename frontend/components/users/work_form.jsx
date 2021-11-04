@@ -9,9 +9,9 @@ class WorkForm extends React.Component{
         super(props);
         this.state= {
             id: this.props.user.id,
-            title: this.props.user.position,
-            company: this.props.user.company,
-            work: this.props.user.work
+            title: this.props.user.position || "",
+            company: this.props.user.company || "",
+            work: this.props.user.work || ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }

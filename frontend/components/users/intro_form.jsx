@@ -11,9 +11,9 @@ class IntroForm extends React.Component{
             id: this.props.user.id,
             first_name: this.props.user.name.split(" ")[0],
             last_name: this.props.user.name.split(" ")[1],
-            headline:  this.props.user.headline,
-            location: this.props.user.location,
-            pronouns: this.props.user.pronouns
+            headline:  this.props.user.headline || "",
+            location: this.props.user.location || "",
+            pronouns: this.props.user.pronouns || ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }

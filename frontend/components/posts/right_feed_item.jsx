@@ -53,7 +53,7 @@ class ConnectionsItem extends React.Component{
                     <div className="name-about">
                         <h1>{user.name}</h1>
                         <h2>{user.headline}</h2>
-                        <h3>{user.location}</h3>
+                        <h3>{user.location === "null" || user.location === null ? "" : user.location}</h3>
                     </div>
                 </div>
                 <input type="button" value={ this.state.connectionStatus } className={`${this.state.connectionStatus} conn-button${user.id === currentUser.id ? ' hide' : ""}`} onClick={this.handleConnect} />

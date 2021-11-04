@@ -9,7 +9,7 @@ class IntroForm extends React.Component{
         super(props);
         this.state= {
             id: this.props.user.id,
-            about: this.props.user.about
+            about: this.props.user.about || ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
