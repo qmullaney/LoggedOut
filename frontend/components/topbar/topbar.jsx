@@ -78,6 +78,9 @@ class Topbar extends React.Component {
                 <ProfileDropdown/>
                 
             </div>
+
+            
+            <a target="_blank" className='personal-link' href="https://mullaney.xyz/">Learn More About Me</a>
         </nav>
 
         return (

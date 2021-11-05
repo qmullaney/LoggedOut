@@ -20,3 +20,23 @@
  @import './api/feed/*';
  @import './api/user/*';
  @import './api/*';
+
+ .personal-link{
+    align-self: center;
+    margin-left: 10%;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+    width: 170px;
+    border-radius: 8px;
+    &:visited{
+        color: black;
+    }
+    &:link{
+        color: black;
+    }
+    &:hover{
+        background-color: rgb(185, 185, 185);
+    }
+ }

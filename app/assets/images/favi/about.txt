@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Gilda Display
+- Font Author: Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar), with Reserved Font Name 'Gilda'
+- Font Source: http://fonts.gstatic.com/s/gildadisplay/v8/t5tmIRoYMoaYG0WEOh7HwMeR7TnFrpOHYh4.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

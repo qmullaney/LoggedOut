@@ -3,14 +3,15 @@
   <head>
 
   <meta property="og:title" content="Logged Out" />
-     <meta property='og:image' content="<%= image_url('screenshot.png') %>"/>
-     <meta property="og:description"
-       content="LoggedOut is a LinkedIn clone with key MVPs such as user auth, posts, profiles, comments, and likes. I built it using React, Redux, Ruby on Rails, and PostgreSQL."
-     />
-     <meta property="og:url"
-       content="http://logged-out.herokuapp.com/"
-     />
+  <meta property='og:image' content="<%= image_url('screenshot.png') %>"/>
+  <meta property="og:description"
+    content="LoggedOut is a LinkedIn clone with key MVPs such as user auth, posts, profiles, comments, and likes. I built it using React, Redux, Ruby on Rails, and PostgreSQL."
+  />
+  <meta property="og:url"
+    content="http://logged-out.herokuapp.com/"
+  />
 
+    <%= favicon_link_tag asset_path('favi/favicon.ico') %>
     <title>LoggedOut</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
