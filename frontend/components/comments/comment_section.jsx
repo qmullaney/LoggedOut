@@ -70,7 +70,7 @@ class CommentSection extends React.Component{
             profileImg = <NavLink to={`/user/${currentUser.id}`}  > <IoPersonCircleOutline className="empty-profile"/>  </NavLink>
         }
 
-        let postButton = <input type="button" className="post-comment margin" value="Post" onClick={this.handlePost} />;
+        let postButton = <input type="button" className="post-comment-margin" value="Post" onClick={this.handlePost} />;
 
                 
         

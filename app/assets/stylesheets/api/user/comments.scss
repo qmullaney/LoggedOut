@@ -74,9 +74,7 @@
     }
 }
 
-.margin{
-    margin-left: 50px;
-}
+
 
 .post-comment{
     width: 50px;
@@ -96,6 +94,26 @@
     }
 }
 
+.post-comment-margin{
+    width: 50px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(10, 100, 200);
+    transition-duration: .2s;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(9, 70, 139);
+    }
+}
+
+
+
 .cancel{
     margin-left: 20px;
     
@@ -105,6 +123,10 @@
     &:hover{
         background-color: rgb(192, 192, 192);
     }
+}
+
+.margin{
+    margin-left: 50px;
 }
 
 .comment{
