@@ -17,11 +17,13 @@ import Profile from './users/profile';
 import Modal from './modal/modal-container';
 import ConnectionsPage from './connections/connections_container';
 import SearchModal from './topbar/search_modal';
+import BotBar from './topbar/botbar';
 
 const App = () => {
     return <div className="app">
         <SearchModal />
         <Modal/>
+        <BotBar/>
         <header>
             <Route exact path="/" component={topbarContainer}/>
             <Route exact path="/feed/" component={topbarContainer}/>
